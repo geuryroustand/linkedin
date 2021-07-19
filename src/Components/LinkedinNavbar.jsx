@@ -10,6 +10,7 @@ import {
   Container,
   Form,
   NavDropdown,
+  Image
 } from "react-bootstrap";
 import React from "react";
 import { BsSearch } from "react-icons/bs";
@@ -99,28 +100,43 @@ const LinkedinNavbar = () => {
 
           <Col xs={1}>
             <Row id="NavIco"><Nav.Link href="#network">
-              <BsPersonSquare></BsPersonSquare>{" "}</Nav.Link>
+            <Col xs={6} md={4}>
+      <Image id="minion" src="https://1075koolfm.com/wp-content/uploads/2020/02/miniomn.jpg" roundedCircle />
+    </Col>{" "}</Nav.Link>
             </Row>
             <Row>
               {" "}
               <NavDropdown id="navnMe" title="Me">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                 Profile section, picture, button -View Profile
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Account
-                </NavDropdown.Item> <NavDropdown.Item href="#action/3.3">
-                  Setting and Privacy
-                </NavDropdown.Item> <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item> <NavDropdown.Item href="#action/3.3">
-                  Something
+                
+                <NavDropdown.Item id="dropMe" href="#action/3.2">
+                 <div>Profile information + picture </div>
+                 <Button id="viewProf" variant="outline-primary">View Profile</Button>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
+                <NavDropdown.Item  id="dropMe"href="#action/3.3">
+                  <b>Account</b>
+                </NavDropdown.Item> <NavDropdown.Item id="dropMe" href="#action/3.3">
+                  Settings and Privacy
+                </NavDropdown.Item> <NavDropdown.Item id="dropMe" href="#action/3.3">
+                  Help
+                </NavDropdown.Item> <NavDropdown.Item id="dropMe" href="#action/3.3">
+                  Language
                 </NavDropdown.Item>
+                
+                <NavDropdown.Divider />
+                
+                <NavDropdown.Item id="dropMe" href="#action/3.3">
+                  <b> Manage</b>
+                </NavDropdown.Item> <NavDropdown.Item id="dropMe" href="#action/3.3">
+                  Post & Activity
+                </NavDropdown.Item> <NavDropdown.Item  id="dropMe" href="#action/3.3">
+                  Job Posting Account
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item  id="dropMe" href="#action/3.3">
+                  Sign Out
+                </NavDropdown.Item>
+
               </NavDropdown>
             </Row>
           </Col>
