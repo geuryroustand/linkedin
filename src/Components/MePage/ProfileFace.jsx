@@ -1,9 +1,9 @@
-import React from "react"
-import "../../styles/ProfileFace.css"
-import profileImg from "./profileImg.jpg"
-import striveLogo from "./strive-logo.ico"
-import { BiPencil } from "react-icons/bi"
-import profileBg from "./profileBg.png"
+import React from "react";
+import "../../styles/ProfileFace.css";
+import profileImg from "./profileImg.jpg";
+import striveLogo from "./strive-logo.ico";
+import { BiPencil } from "react-icons/bi";
+import profileBg from "./profileBg.png";
 
 // console.log(profileImg);
 const ProfileFace = () => {
@@ -24,7 +24,7 @@ const ProfileFace = () => {
           <BiPencil
             className="profile-pencil"
             style={{
-              marginLeft: "30rem",
+              marginLeft: "37rem",
               marginBottom: "50px",
               fontSize: "25px",
               color: "#818181",
@@ -37,19 +37,34 @@ const ProfileFace = () => {
           <div className="personal-info p-3">
             <h2>Geury Roustand</h2>
             <p>Junior Frontend Developer 🧑🏿‍💻 Traveler 🗺️ </p>
-            <p>
+            <p className="text-muted personal-info-text ">
               Talk about #travel, #learninglive, #frontendengineer, and
+              <br></br>
               #javascriptframeworkTalks
             </p>
             <div className="d-flex">
-              <p>Göppingen, Baden-Württemberg, Germany.</p>
-              <a href="/">Contact Info</a>
+              <p className=" text-muted personal-info-text">
+                Göppingen, Baden-Württemberg, Germany.
+              </p>
+              <a
+                className="ml-2 personal-info-text personal-info-text-color"
+                href="/"
+              >
+                Contact Info
+              </a>
             </div>
 
-            <div className="d-flex">
-              <a href="/"> 286 followers </a>
-              <p>.</p>
-              <a href="/"> 284 connections </a>
+            <div className="d-flex my-2">
+              <a
+                className="mr-1 personal-info-text personal-info-text-color "
+                href="/"
+              >
+                286 followers
+              </a>
+              <p className="mr-1">.</p>
+              <a className="personal-info-text personal-text-color " href="/">
+                284 connections
+              </a>
             </div>
             <div className="buttons-personal-info">
               <button className="first-button">Open to</button>
@@ -66,14 +81,21 @@ const ProfileFace = () => {
                   src={striveLogo}
                   alt=""
                 />
-                <p className="p-personal-info">Strive School</p>
+
+                <a
+                  style={{ color: "rgba(0, 0, 0, 0.9)", fontSize: "14px" }}
+                  className="p-personal-info personal-info-text font-weight-bold "
+                  href="/#"
+                >
+                  Strive School
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProfileFace
+export default ProfileFace;

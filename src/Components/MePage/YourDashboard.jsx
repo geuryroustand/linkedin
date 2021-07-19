@@ -1,7 +1,8 @@
-import "../../styles/YourDashboard.css"
-import { AiOutlineStar } from "react-icons/ai"
-import { FaSatelliteDish } from "react-icons/fa"
-import { BsPeopleFill, BsBookmarkFill } from "react-icons/bs"
+import "../../styles/yourDashboard.css";
+
+import { AiOutlineStar } from "react-icons/ai";
+import { FaSatelliteDish } from "react-icons/fa";
+import { BsPeopleFill, BsBookmarkFill } from "react-icons/bs";
 
 const YourDashboard = () => {
   return (
@@ -87,7 +88,7 @@ const YourDashboard = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default YourDashboard
+export default YourDashboard;
