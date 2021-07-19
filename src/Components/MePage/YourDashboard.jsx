@@ -1,11 +1,11 @@
-import "../../styles/yourDashboard.css"
+import "../../styles/YourDashboard.css"
 import { AiOutlineStar } from "react-icons/ai"
 import { FaSatelliteDish } from "react-icons/fa"
 import { BsPeopleFill, BsBookmarkFill } from "react-icons/bs"
 
 const YourDashboard = () => {
   return (
-    <div id="your-dashboard-div" className="border p-4">
+    <div id="your-dashboard-div" className="border p-4 mb-3">
       <div className="dashboard-title">
         <h4 className="font-weight-normal">Your Dashboard</h4>
         <div className="d-flex justify-content-between">
@@ -16,16 +16,22 @@ const YourDashboard = () => {
         </div>
         <div className="stats d-flex mt-3">
           <div className="border flex-fill px-3 pt-3">
-            <h3>19</h3>
-            <p>Who viewed your profile</p>
+            <a href="/">
+              <h3>19</h3>
+              <p>Who viewed your profile</p>
+            </a>
           </div>
           <div className="border-top border-bottom flex-fill px-3 pt-3">
-            <h3>55</h3>
-            <p>Post views</p>
+            <a href="/">
+              <h3>55</h3>
+              <p>Post views</p>
+            </a>
           </div>
           <div className="border flex-fill px-3 pt-3">
-            <h3>8</h3>
-            <p>Search appearances</p>
+            <a href="/">
+              <h3>8</h3>
+              <p>Search appearances</p>
+            </a>
           </div>
         </div>
         <div className="creator-network-items mt-3">
