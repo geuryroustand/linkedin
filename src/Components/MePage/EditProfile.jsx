@@ -2,7 +2,7 @@ import "../../styles/EditProfile.css"
 import { AiFillQuestionCircle } from "react-icons/ai"
 const EditProfile = () => {
   return (
-    <div id="edit-profile-div" className="p-3 border">
+    <div id="edit-profile-div" className="p-3 border mb-3">
       <a href="/">
         <div className="border-bottom d-flex justify-content-between text-muted pb-3">
           <span>Edit public profile & URL</span>
@@ -19,7 +19,6 @@ const EditProfile = () => {
           </span>
         </div>
       </a>
-      <div></div>
     </div>
   )
 }
