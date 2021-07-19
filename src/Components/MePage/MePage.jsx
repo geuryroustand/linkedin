@@ -4,6 +4,7 @@ import AboutMe from "./AboutMe"
 import Activity from "./Activity"
 import Interests from "./Interests"
 import EditProfile from "./EditProfile"
+import YourDreamJob from "../YourDreamJob"
 
 const MePage = () => {
   return (
@@ -17,6 +18,7 @@ const MePage = () => {
         </Col>
         <Col xs={12} md={4}>
           <EditProfile />
+          <YourDreamJob />
         </Col>
       </Row>
     </Container>
