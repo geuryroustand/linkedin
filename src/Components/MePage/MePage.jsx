@@ -1,4 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap"
+import ExperienceEducation from "./ExperienceEducation"
 import YourDashboard from "./YourDashboard"
 import AboutMe from "./AboutMe"
 import Activity from "./Activity"
@@ -17,6 +18,7 @@ const MePage = () => {
           <YourDashboard />
           <AboutMe />
           <Activity />
+          <ExperienceEducation/>
           <Interests />
         </Col>
         <Col xs={12} md={4}>
