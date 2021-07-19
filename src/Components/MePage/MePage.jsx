@@ -3,6 +3,7 @@ import YourDashboard from "./YourDashboard"
 import AboutMe from "./AboutMe"
 import Activity from "./Activity"
 import Interests from "./Interests"
+import EditProfile from "./EditProfile"
 
 const MePage = () => {
   return (
@@ -14,7 +15,9 @@ const MePage = () => {
           <Activity />
           <Interests />
         </Col>
-        <Col xs={12} md={4}></Col>
+        <Col xs={12} md={4}>
+          <EditProfile />
+        </Col>
       </Row>
     </Container>
   )
