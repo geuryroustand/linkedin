@@ -1,22 +1,19 @@
-import React from "react";
-// import { Image } from "react-bootstrap";4
-import Image from "react-bootstrap/Image";
-import "./ProfileFace.css";
-import profileImg from "./profileImg.jpg";
-import striveLogo from "./strive-logo.ico";
-import { BiPencil } from "react-icons/bi";
-import profileBg from "./profileBg.png";
+import React from "react"
+import "../../styles/ProfileFace.css"
+import profileImg from "./profileImg.jpg"
+import striveLogo from "./strive-logo.ico"
+import { BiPencil } from "react-icons/bi"
+import profileBg from "./profileBg.png"
 
 // console.log(profileImg);
 const ProfileFace = () => {
   return (
-    <div className="profile-main">
+    <div className="profile-main border mb-3">
       <div
         className="bg-img"
         style={{
           backgroundImage: `url(${profileBg})`,
-          width: "100%",
-          height: "50%",
+          height: "10rem",
           objectFit: "cover",
         }}
       ></div>
@@ -37,7 +34,7 @@ const ProfileFace = () => {
         </div>
 
         <div className="d-flex">
-          <div className="personal-info">
+          <div className="personal-info p-3">
             <h2>Geury Roustand</h2>
             <p>Junior Frontend Developer 🧑🏿‍💻 Traveler 🗺️ </p>
             <p>
@@ -46,13 +43,13 @@ const ProfileFace = () => {
             </p>
             <div className="d-flex">
               <p>Göppingen, Baden-Württemberg, Germany.</p>
-              <a href="#">Contact Info</a>
+              <a href="/">Contact Info</a>
             </div>
 
             <div className="d-flex">
-              <a href="#"> 286 followers </a>
+              <a href="/"> 286 followers </a>
               <p>.</p>
-              <a href="#"> 284 connections </a>
+              <a href="/"> 284 connections </a>
             </div>
             <div className="buttons-personal-info">
               <button className="first-button">Open to</button>
@@ -76,7 +73,7 @@ const ProfileFace = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProfileFace;
+export default ProfileFace

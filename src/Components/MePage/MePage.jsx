@@ -6,28 +6,27 @@ import Activity from "./Activity"
 import Interests from "./Interests"
 import EditProfile from "./EditProfile"
 import YourDreamJob from "../YourDreamJob"
-import ProfileFace from "./ProfileFace";
-
+import ProfileFace from "./ProfileFace"
 
 const MePage = () => {
   return (
-    <Container>
+    <Container id="me-page">
       <Row>
-        <Col xs={12} md={8}>
+        <Col xs={12} md={9}>
           <ProfileFace />
           <YourDashboard />
           <AboutMe />
           <Activity />
-          <ExperienceEducation/>
+          <ExperienceEducation />
           <Interests />
         </Col>
-        <Col xs={12} md={4}>
+        <Col xs={12} md={3}>
           <EditProfile />
           <YourDreamJob />
         </Col>
       </Row>
     </Container>
-  );
-};
+  )
+}
 
-export default MePage;
+export default MePage

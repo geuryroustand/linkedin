@@ -1,101 +1,103 @@
-header{
-    display: flex;
-    height: 6px;
-    padding: 24px 24px 0;
-    margin-bottom: 32px;
+#experience-education-div {
+  border-radius: 10px;
 }
 
-h4{
-    flex: 1;
-}
-h5,p{
-    margin: 0;
-}
-.image-div{
-    position: absolute;
-}
-.Ex-image{
-    position: absolute;
-    left: -35px;
-    top: 17%;
-}
-.Ex-info{
-     margin-left: 50px;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-}
-.Ex-largest{
-    padding: 20px;
+header {
+  display: flex;
+  height: 6px;
+  padding: 24px 24px 0;
+  margin-bottom: 32px;
 }
 
-li{
-    list-style: none;
+h4 {
+  flex: 1;
 }
-.Ex-pencil{
-   justify-content: right;
+h5,
+p {
+  margin: 0;
 }
-.Ex-burger{
-    position: relative;
-    top: 36px;
-    opacity: 0;
+.image-div {
+  position: absolute;
 }
-.Ex-largest:hover .Ex-burger{
-    opacity: 1;
+.Ex-image {
+  position: absolute;
+  left: -35px;
+  top: 17%;
+}
+.Ex-info {
+  margin-left: 50px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.Ex-largest {
+  padding: 20px;
+}
+
+li {
+  list-style: none;
+}
+.Ex-pencil {
+  justify-content: right;
+}
+.Ex-burger {
+  position: relative;
+  top: 36px;
+  opacity: 0;
+}
+.Ex-largest:hover .Ex-burger {
+  opacity: 1;
 }
 
 /* ED */
 /* .Ed-pencil{
    
 } */
-.Ed-image{
-    position: absolute;
-    left: -35px;
-    top: 17%;
+.Ed-image {
+  position: absolute;
+  left: -35px;
+  top: 17%;
 }
-.Ed-largest{
-    padding: 20px;
+.Ed-largest {
+  padding: 20px;
 }
-.Ed-info{
-    margin-left: 50px;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
+.Ed-info {
+  margin-left: 50px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
-.allContainer{
-    display: flex;
+.allContainer {
+  display: flex;
 }
-.Ed-burger{
-    position: relative;
-    opacity: 0;
-    top: 36px;
+.Ed-burger {
+  position: relative;
+  opacity: 0;
+  top: 36px;
 }
-.Ed-largest:hover .Ed-burger{
-    opacity: 1;
+.Ed-largest:hover .Ed-burger {
+  opacity: 1;
 }
-a{
-    color: black;
-    text-decoration: none;
+a {
+  color: black;
+  text-decoration: none;
 }
-a:hover{
-    color: black;
-    text-decoration: underline blue 1px;
-     
+a:hover {
+  color: black;
+  text-decoration: underline blue 1px;
 }
 
-.infoContainer{
-    display: flex;
-    flex: 1;
-    
+.infoContainer {
+  display: flex;
+  flex: 1;
 }
-.icons{
-    display: flex;
-    flex-direction: column;
-
+.icons {
+  display: flex;
+  flex-direction: column;
 }
-li::after{
-    content: "";
-    display: block;
-    border-bottom: (3px solid black);
-    margin-left: 100px;
+li::after {
+  content: "";
+  display: block;
+  border-bottom: (3px solid black);
+  margin-left: 100px;
 }
