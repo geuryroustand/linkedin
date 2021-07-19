@@ -1,0 +1,28 @@
+#interests-div {
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+#interests-div .interests-title h4 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+#interests-div .interests img {
+  width: 65px;
+  height: 65px;
+}
+
+#interests-div .interests > div {
+  width: 50%;
+}
+
+#interests-div .see-all {
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#interests-div .see-all:hover {
+  background-color: #ebebeb;
+}

@@ -1,0 +1,21 @@
+#about-me-div {
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+#about-me-div .about-me-title h4 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+#about-me-div .about-me-title .icon {
+  font-size: 25px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+#about-me-div .about-me-title .icon:hover {
+  background-color: #ebebeb;
+}
