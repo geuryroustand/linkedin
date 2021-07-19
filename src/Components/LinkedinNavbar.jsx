@@ -77,29 +77,29 @@ const LinkedinNavbar = () => {
             <Row id="navn"><Nav.Link href="#network"> My Network</Nav.Link></Row>
           </Col>
           <Col xs={1}>
-            <Row id="NavIco"> <Nav.Link href="#network"><FaSuitcase></FaSuitcase> </Nav.Link>
+            <Row id="NavIco"> <Nav.Link href="#jobs"><FaSuitcase></FaSuitcase> </Nav.Link>
               {" "}
               
             </Row>
-            <Row id="navn"><Nav.Link href="#network"> Jobs</Nav.Link></Row>
+            <Row id="navn"><Nav.Link href="#jobs"> Jobs</Nav.Link></Row>
           </Col>
           <Col xs={1}>
-            <Row id="NavIco"><Nav.Link href="#network">
+            <Row id="NavIco"><Nav.Link href="#messaging">
               {" "}
               <BsChatQuoteFill></BsChatQuoteFill></Nav.Link>
             </Row>
-            <Row id="navn"><Nav.Link href="#network"> Messaging</Nav.Link></Row>
+            <Row id="navn"><Nav.Link href="#messaging"> Messaging</Nav.Link></Row>
           </Col>
           <Col xs={1}>
-            <Row id="NavIco"><Nav.Link href="#network">
+            <Row id="NavIco"><Nav.Link href="#notifications">
               {" "}
               <BsBellFill></BsBellFill></Nav.Link>
             </Row>
-            <Row id="navn"><Nav.Link href="#network"> Notification</Nav.Link></Row>
+            <Row id="navn"><Nav.Link href="#notifications"> Notification</Nav.Link></Row>
           </Col>
 
           <Col xs={1}>
-            <Row id="NavIco"><Nav.Link href="#network">
+            <Row id="NavIco"><Nav.Link href="#Me">
             <Col xs={6} md={4}>
       <Image id="minion" src="https://1075koolfm.com/wp-content/uploads/2020/02/miniomn.jpg" roundedCircle />
     </Col>{" "}</Nav.Link>
@@ -142,7 +142,7 @@ const LinkedinNavbar = () => {
           </Col>
 
           <Col xs={1}>
-            <Row id="NavIco"><Nav.Link href="#network">
+            <Row id="NavIco"><Nav.Link href="#work">
               <BsFillCalendarFill></BsFillCalendarFill>{" "}</Nav.Link>
             </Row>
             <Row>
