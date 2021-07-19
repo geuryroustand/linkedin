@@ -6,7 +6,7 @@ const AboutMe = () => {
     <div id="about-me-div" className="p-4 border mb-3">
       <div className="about-me-title d-flex justify-content-between">
         <h4>About</h4>
-        <div className="text-muted icon d-flex align-items-center justify-content-center">
+        <div className="icon text-muted d-flex align-items-center justify-content-center">
           <BiPencil />
         </div>
       </div>
