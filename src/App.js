@@ -3,6 +3,7 @@ import "./App.css"
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import MePage from "./Components/MePage/MePage"
 import LinkedinNavbar from "./Components/LinkedinNavbar"
+import './styles/ExperienceEducation.css' 
 
 function App() {
   return (
