@@ -5,12 +5,15 @@ import Activity from "./Activity"
 import Interests from "./Interests"
 import EditProfile from "./EditProfile"
 import YourDreamJob from "../YourDreamJob"
+import ProfileFace from "./ProfileFace";
+
 
 const MePage = () => {
   return (
     <Container>
       <Row>
         <Col xs={12} md={8}>
+          <ProfileFace />
           <YourDashboard />
           <AboutMe />
           <Activity />
@@ -22,7 +25,7 @@ const MePage = () => {
         </Col>
       </Row>
     </Container>
-  )
-}
+  );
+};
 
-export default MePage
+export default MePage;
