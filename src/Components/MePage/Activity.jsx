@@ -12,9 +12,7 @@ const Activity = () => {
             </div>
           </div>
           <p className="followers">
-            <p className="followers">
-              <a href="/">189 followers</a>
-            </p>
+            <a href="/">189 followers</a>
           </p>
         </div>
         <p className="mt-3">
