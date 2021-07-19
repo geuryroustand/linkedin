@@ -1,0 +1,42 @@
+#your-dashboard-div {
+  border-radius: 10px;
+  background-color: #dce6f1;
+  font-size: 14px;
+}
+
+#your-dashboard-div .dashboard-title h4 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+#your-dashboard-div .stats {
+  background-color: white;
+  border-radius: 14px;
+}
+
+#your-dashboard-div .stats div {
+  width: 33.333%;
+}
+
+#your-dashboard-div .stats div h3 {
+  color: #2e76c8;
+  font-weight: 200;
+  font-size: 32px;
+}
+
+#your-dashboard-div .stats div p {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+#your-dashboard-div .creator-network-items {
+  border-radius: 14px;
+  background-color: white;
+}
+
+#your-dashboard-div .creator-network-items > div .icon {
+  font-size: 20px;
+}
+
+#your-dashboard-div .creator-network-items > div strong {
+  color: black;
+}
