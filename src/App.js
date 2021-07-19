@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css"
-import "./App.css"
+import "./LinkedinNavbar.css"
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import MePage from "./Components/MePage/MePage"
 import LinkedinNavbar from "./Components/LinkedinNavbar"
