@@ -26,6 +26,31 @@ const PostExperienceForm = (props) => {
     setJob({ ...job, [key]: value })
   }
 
+  /* Function to get experience */
+  const fetchExperience = async () => {
+    try {
+      const response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/${props.meProfile._id}/experiences/${props.experienceId}`,
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY2ODcxYjM0NTViYTAwMTUyMjdkZjciLCJpYXQiOjE2MjY3NjkxODAsImV4cCI6MTYyNzk3ODc4MH0.V4nubxjI1arEROLfw4Xf_rjLxNCsDBT1P3WY5Gnh8zY",
+          },
+        }
+      )
+
+      if (response.ok) {
+        const experience = await response.json()
+        console.log(experience)
+        setJob(experience)
+      } else {
+        console.log("There was a n error")
+      }
+    } catch (error) {
+      console.log("There was a n error")
+    }
+  }
+
   /* function to handle the post */
   const handlePostAndEdit = async (e) => {
     e.preventDefault()
@@ -35,7 +60,7 @@ const PostExperienceForm = (props) => {
           ? `https://striveschool-api.herokuapp.com/api/profile/${props.meProfile._id}/experiences/${props.experienceId}`
           : `https://striveschool-api.herokuapp.com/api/profile/${props.meProfile._id}/experiences`,
         {
-          method: job ? "PUT" : "POST",
+          method: props.experienceId ? "PUT" : "POST",
           body: JSON.stringify(job),
           headers: {
             Authorization:
@@ -67,28 +92,27 @@ const PostExperienceForm = (props) => {
     }
   }
 
-  /* Function to get experience */
-  const fetchExperience = async () => {
+  /* Function to delete experience*/
+  const deleteExperience = async () => {
     try {
       const response = await fetch(
         `https://striveschool-api.herokuapp.com/api/profile/${props.meProfile._id}/experiences/${props.experienceId}`,
         {
+          method: "DELETE",
           headers: {
             Authorization:
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY2ODcxYjM0NTViYTAwMTUyMjdkZjciLCJpYXQiOjE2MjY3NjkxODAsImV4cCI6MTYyNzk3ODc4MH0.V4nubxjI1arEROLfw4Xf_rjLxNCsDBT1P3WY5Gnh8zY",
           },
         }
       )
-
       if (response.ok) {
-        const experience = await response.json()
-        console.log(experience)
-        setJob(experience)
+        props.setEditFormShow(!props.editFormShow)
+        console.log("experience deleted with success")
       } else {
-        console.log("There was a n error")
+        console.log("there was an error")
       }
     } catch (error) {
-      console.log("There was a n error")
+      console.log("there was an error", error)
     }
   }
 
@@ -160,7 +184,7 @@ const PostExperienceForm = (props) => {
           {props.experienceId ? "Edit" : "Submit"}
         </Button>
         {props.experienceId && (
-          <Button variant="danger" type="button">
+          <Button onClick={deleteExperience} variant="danger" type="button">
             <FaTrashAlt />
           </Button>
         )}
