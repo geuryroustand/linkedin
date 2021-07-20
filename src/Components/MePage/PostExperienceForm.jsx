@@ -118,16 +118,6 @@ const PostExperienceForm = (props) => {
 
   return (
     <Form onSubmit={(e) => handlePostAndEdit(e)}>
-      <Form.Group className="mb-3" controlId="role">
-        <Form.Label>Role</Form.Label>
-        <Form.Control
-          onChange={(e) => handleInputChange("role", e.target.value)}
-          value={job.role}
-          type="text"
-          placeholder="Write the Role"
-        />
-      </Form.Group>
-
       <Form.Group className="mb-3" controlId="company">
         <Form.Label>Company</Form.Label>
         <Form.Control
@@ -135,6 +125,16 @@ const PostExperienceForm = (props) => {
           value={job.company}
           type="text"
           placeholder="Write the company"
+        />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="role">
+        <Form.Label>Role</Form.Label>
+        <Form.Control
+          onChange={(e) => handleInputChange("role", e.target.value)}
+          value={job.role}
+          type="text"
+          placeholder="Write the Role"
         />
       </Form.Group>
 
