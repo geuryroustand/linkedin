@@ -3,100 +3,113 @@
   background-color: white;
 }
 
-header {
+#experience-education-div header {
   display: flex;
-  height: 6px;
-  padding: 24px 24px 0;
   margin-bottom: 32px;
+  justify-content: space-between;
 }
 
-h4 {
-  flex: 1;
+#experience-education-div h4 {
+  font-size: 20px;
+  font-weight: 400;
 }
-h5,
+#experience-education-div h5,
 p {
   margin: 0;
 }
-.image-div {
+#experience-education-div .image-div {
   position: absolute;
 }
-.Ex-image {
+#experience-education-div .Ex-image {
   position: absolute;
   left: -35px;
   top: 17%;
 }
-.Ex-info {
+#experience-education-div .Ex-info {
   margin-left: 50px;
   display: flex;
   flex: 1;
   flex-direction: column;
 }
-.Ex-largest {
+#experience-education-div .Ex-largest {
   padding: 20px;
 }
 
-li {
+#experience-education-div li {
   list-style: none;
 }
-.Ex-pencil {
+#experience-education-div .Ex-pencil {
   justify-content: right;
 }
-.Ex-burger {
+#experience-education-div .Ex-burger {
   position: relative;
   top: 36px;
   opacity: 0;
 }
-.Ex-largest:hover .Ex-burger {
+#experience-education-div .Ex-largest:hover .Ex-burger {
   opacity: 1;
+}
+
+/* add button */
+#experience-education-div .change-icons {
+  font-size: 25px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+#experience-education-div .change-icons:hover {
+  background-color: #ebebeb;
 }
 
 /* ED */
 /* .Ed-pencil{
    
 } */
-.Ed-image {
+#experience-education-div .Ed-image {
   position: absolute;
   left: -35px;
   top: 17%;
 }
-.Ed-largest {
+#experience-education-div .Ed-largest {
   padding: 20px;
 }
-.Ed-info {
+#experience-education-div .Ed-info {
   margin-left: 50px;
   display: flex;
   flex: 1;
   flex-direction: column;
 }
-.allContainer {
+#experience-education-div .allContainer {
   display: flex;
 }
-.Ed-burger {
+#experience-education-div .Ed-burger {
   position: relative;
   opacity: 0;
   top: 36px;
 }
-.Ed-largest:hover .Ed-burger {
+#experience-education-div .Ed-largest:hover .Ed-burger {
   opacity: 1;
 }
-a {
+#experience-education-div a {
   color: black;
   text-decoration: none;
 }
-a:hover {
+#experience-education-div a:hover {
   color: black;
   text-decoration: underline blue 1px;
 }
 
-.infoContainer {
+#experience-education-div .infoContainer {
   display: flex;
   flex: 1;
 }
-.icons {
+#experience-education-div .icons {
   display: flex;
   flex-direction: column;
 }
-li::after {
+#experience-education-div li::after {
   content: "";
   display: block;
   border-bottom: (3px solid black);
