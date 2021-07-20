@@ -1,5 +1,5 @@
 #linked-in-navbar {
-  background-color: rgb(247, 255, 252);
+  background-color: rgb(255, 255, 255);
   position: fixed;
   top: 0;
   right: 0;
@@ -7,69 +7,100 @@
   z-index: 9;
 }
 
+#linked-in-navbar > div > div > div.col-4 > nav {
+  display: inline-block;
+}
+
+.ABC {
+  display: flex;
+  align-items: baseline;
+  padding-right: 3px;
+  margin-top: 5px;
+}
+
+#linked-in-navbar > div > div > div.ABC.col-4 > nav {
+  padding: 0px;
+}
+/* Home, my network ext */
 div.col-1 {
   font-size: 13px;
   color: rgb(122, 119, 119);
 }
-
-#root > div > div:nth-child(1) > div > div.col-4 > nav {
-  padding-left: 0px;
-}
-div#NavIco.row {
-  font-size: 22px;
-
+/*icons in navBar*/
+.NavIco.row {
+  font-size: 24px;
   color: rgb(112, 112, 112);
   justify-content: center;
 }
-div#NavIco.row::after {
-  color: rgb(59, 58, 58);
-}
+#NavIco {
+  font-size: 17px;
+  color: rgb(112, 112, 112);
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-left: 8px;
 
-div#NavIco.row:hover {
-  background: "#efefef";
+  border-right: none;
+  background-color: rgb(232, 245, 253);
 }
-div#navn.row {
+.navn.row {
   justify-content: center;
 }
 
-#logo {
-  margin-right: 10px;
+.navn.row:hover {
+  justify-content: center;
+  border-bottom: solid black 2px;
 }
 
 a.nav-link {
   padding: 0%;
-  color: rgb(131, 127, 127);
+  color: rgb(112, 112, 112);
 }
+
+a.nav-link:hover {
+  padding: 0%;
+  color: rgb(12, 12, 12);
+}
+
 #navnMe {
-  padding-left: 35px;
-}
-div#navnMe {
-  border-right: solid gray 1px;
+  padding-left: 28px;
 }
 
-input.mr-2.form-control {
-  background-color: rgb(248, 248, 248);
+#searchBAR {
   border: none;
-  width: 300px;
-}
-
-a#navnMe.dropdown-toggle.nav-link::after {
-  margin: 0%;
+  background-color: rgb(232, 245, 253);
+  border-radius: 5px;
 }
 
 #minion {
-  height: 35px;
+  height: 30px;
+}
+
+#meForm {
+  width: 300px;
+  color: rgb(104, 104, 103);
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 #dropMe {
-  font-size: 13px;
+  font-size: 14px;
   padding: 3px;
   color: rgb(131, 127, 127);
+  padding-left: 25px;
 }
 #viewProf {
   padding: 0px;
   margin: 0px;
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: bolder;
   display: flex;
+  width: 100%;
+  display: flex;
+  padding: 2px;
+  border-radius: 15px;
+  justify-content: center;
 }
 #logoFooter {
   width: 96px;
