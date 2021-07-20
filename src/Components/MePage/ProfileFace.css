@@ -24,6 +24,7 @@
 .rounded-img-section {
   width: 100%;
   height: 80px;
+  position: relative;
 }
 
 .profil-rounded-img {
@@ -35,6 +36,9 @@
   position: relative;
   bottom: 100px;
   border: solid 4px white;
+}
+.profile-pencil:hover {
+  background-color: azure;
 }
 .small-img-personal-info {
   width: 30px;
@@ -94,8 +98,9 @@
 .personal-info-text {
   font-size: 14px;
   line-height: 18px;
+  color: #0a66c2 !important;
 }
 
-.personal-text-color {
-  color: #0a66c2;
-}
+/* .personal-text-color {
+  
+} */
