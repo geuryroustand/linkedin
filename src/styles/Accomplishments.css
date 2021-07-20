@@ -1,0 +1,35 @@
+
+.acc-num{
+    position: absolute;
+    color: #0277B7;
+    font-size: 30px;
+}
+.acc-largest{
+    padding: 20px;
+}
+.accContainer {
+    display: flex;
+  }
+
+.accInfoContainer {
+  display: flex;
+    flex: 1;
+  }
+.acc-info {
+    margin-left: 24px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+.acc-icons {
+    display: flex;
+    flex-direction: column;
+  }
+.acc-button{
+    border-radius: 50%;
+    border: none;
+}
+.acc-blue{
+    color: #0277B7;
+    font-weight: 600;
+}

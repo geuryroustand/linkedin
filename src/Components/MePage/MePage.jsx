@@ -7,6 +7,8 @@ import Interests from "./Interests"
 import EditProfile from "./EditProfile"
 import YourDreamJob from "../YourDreamJob"
 import ProfileFace from "./ProfileFace"
+import SkillAndEndorsement from "../SkillsAndEndorsement"
+import Accomplishments from "../Accomplishments"
 
 const MePage = (props) => {
   return (
@@ -18,6 +20,8 @@ const MePage = (props) => {
           <AboutMe meProfile={props.meProfile} />
           <Activity />
           <ExperienceEducation />
+          <SkillAndEndorsement/>
+          <Accomplishments/>
           <Interests />
         </Col>
         <Col xs={12} md={3}>

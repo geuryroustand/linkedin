@@ -1,4 +1,4 @@
-import "../../styles/YourDashboard.css";
+import "../../styles/yourDashboard.css";
 
 import { AiOutlineStar } from "react-icons/ai";
 import { FaSatelliteDish } from "react-icons/fa";
