@@ -41,7 +41,11 @@ const ProfileFace = ({ meProfile }) => {
 
       <div className="profile-info">
         <div className="rounded-img-section">
-          <img src={meProfile.image} className="profil-rounded-img" alt="" />
+          <img
+            src={meProfile && meProfile.image}
+            className="profil-rounded-img"
+            alt=""
+          />
           <BiPencil
             className="profile-pencil"
             style={{
@@ -57,8 +61,8 @@ const ProfileFace = ({ meProfile }) => {
 
         <div className="d-flex justify-content-between ">
           <div className="personal-info p-3">
-            <h2>{`${meProfile.name} ${meProfile.surname}`}</h2>
-            <p>{meProfile.title}</p>
+            <h2>{meProfile && `${meProfile.name} ${meProfile.surname}`}</h2>
+            <p>{meProfile && meProfile.title}</p>
             <StickyProfile
               name="Geury Roustand"
               profesion="Junior Frontend Developer 🧑🏿‍💻 Traveler 🗺️ "
@@ -71,7 +75,9 @@ const ProfileFace = ({ meProfile }) => {
               #javascriptframeworkTalks
             </p>
             <div className="d-flex">
-              <p className=" text-muted personal-info-text">{meProfile.area}</p>
+              <p className=" text-muted personal-info-text">
+                {meProfile && meProfile.area}
+              </p>
               <a className="ml-2 personal-info-text " href="/">
                 Contact Info
               </a>

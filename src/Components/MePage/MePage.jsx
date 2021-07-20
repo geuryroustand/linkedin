@@ -15,7 +15,7 @@ const MePage = (props) => {
         <Col xs={12} md={9}>
           <ProfileFace meProfile={props.meProfile} />
           <YourDashboard />
-          <AboutMe />
+          <AboutMe meProfile={props.meProfile} />
           <Activity />
           <ExperienceEducation />
           <Interests />
