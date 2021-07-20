@@ -1,6 +1,7 @@
 #activity-div {
   border-radius: 10px;
   font-size: 14px;
+  background-color: white;
 }
 
 #activity-div .activity-title h4 {
