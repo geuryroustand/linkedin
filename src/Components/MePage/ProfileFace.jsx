@@ -1,12 +1,33 @@
-import React from "react"
-import "../../styles/ProfileFace.css"
-import profileImg from "./profileImg.jpg"
-import striveLogo from "./strive-logo.ico"
-import { BiPencil } from "react-icons/bi"
-import profileBg from "./profileBg.png"
+import React, { useRef, useState, useEffect } from "react";
+import "../../styles/ProfileFace.css";
+import profileImg from "./profileImg.jpg";
+import striveLogo from "./strive-logo.ico";
+import { BiPencil } from "react-icons/bi";
+import profileBg from "./profileBg.png";
+import StickyProfile from "./StickyProfile";
 
 // console.log(profileImg);
 const ProfileFace = () => {
+  let currentCoords = useRef();
+  const [coords, setCoords] = useState();
+  const [exaCoords, setExaCoords] = useState(false);
+
+  useEffect(() => {
+    setCoords(currentCoords.current.getBoundingClientRect());
+  }, []);
+
+  // window.addEventListener("scroll", () => {
+  //   if (window.scrollY > coords.top) {
+  //     setExaCoords(true);
+  //   }
+  // });
+
+  console.log(coords);
+  // console.log(coords);
+  // currentCoords
+  // const inicialCoords = buttonSection.current.getBoundingClientRect();
+  // const inicialCoords = buttonSection.getBoundingClientRect();
+  // console.log(inicialCoords);
   return (
     <div className="profile-main border mb-3">
       <div
@@ -24,34 +45,54 @@ const ProfileFace = () => {
           <BiPencil
             className="profile-pencil"
             style={{
-              marginLeft: "30rem",
-              marginBottom: "50px",
               fontSize: "25px",
               color: "#818181",
               cursor: "pointer",
+              position: "absolute",
+              right: "35px",
+              top: "181px",
             }}
           />
         </div>
 
-        <div className="d-flex">
+        <div className="d-flex justify-content-between ">
           <div className="personal-info p-3">
             <h2>Geury Roustand</h2>
             <p>Junior Frontend Developer 🧑🏿‍💻 Traveler 🗺️ </p>
-            <p>
+            <StickyProfile
+              name="Geury Roustand"
+              profesion="Junior Frontend Developer 🧑🏿‍💻 Traveler 🗺️ "
+              profilImg={profileImg}
+              coords={exaCoords}
+            />
+            <p className="text-muted personal-info-text ">
               Talk about #travel, #learninglive, #frontendengineer, and
+              <br></br>
               #javascriptframeworkTalks
             </p>
             <div className="d-flex">
-              <p>Göppingen, Baden-Württemberg, Germany.</p>
-              <a href="/">Contact Info</a>
+              <p className=" text-muted personal-info-text">
+                Göppingen, Baden-Württemberg, Germany.
+              </p>
+              <a className="ml-2 personal-info-text " href="/">
+                Contact Info
+              </a>
             </div>
 
-            <div className="d-flex">
-              <a href="/"> 286 followers </a>
-              <p>.</p>
-              <a href="/"> 284 connections </a>
+            <div className="d-flex my-2">
+              <a
+                className="mr-1 personal-info-text personal-text-color  "
+                href="/"
+              >
+                286 followers
+              </a>
+              <p className="mr-1">.</p>
+              <a className="personal-info-text personal-text-color " href="/">
+                284 connections
+              </a>
             </div>
-            <div className="buttons-personal-info">
+
+            <div ref={currentCoords} className="buttons-personal-info">
               <button className="first-button">Open to</button>
               <button className="secondary-button">Add section</button>
               <button className="third-button">More</button>
@@ -59,21 +100,26 @@ const ProfileFace = () => {
           </div>
 
           <div>
-            <div>
-              <div className="d-flex justify-content-between ">
-                <img
-                  className="small-img-personal-info"
-                  src={striveLogo}
-                  alt=""
-                />
-                <p className="p-personal-info">Strive School</p>
-              </div>
+            <div className="d-flex  ">
+              <img
+                className="small-img-personal-info"
+                src={striveLogo}
+                alt=""
+              />
+
+              <a
+                style={{ color: "rgba(0, 0, 0, 0.9)", fontSize: "14px" }}
+                className="p-personal-info personal-info-text font-weight-bold "
+                href="/#"
+              >
+                Strive School
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProfileFace
+export default ProfileFace;
