@@ -8,12 +8,12 @@ import EditProfile from "./EditProfile"
 import YourDreamJob from "../YourDreamJob"
 import ProfileFace from "./ProfileFace"
 
-const MePage = () => {
+const MePage = (props) => {
   return (
     <Container id="me-page">
       <Row>
         <Col xs={12} md={9}>
-          <ProfileFace />
+          <ProfileFace meProfile={props.meProfile} />
           <YourDashboard />
           <AboutMe />
           <Activity />

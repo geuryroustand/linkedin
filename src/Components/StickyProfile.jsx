@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react"
 
-import { Container, Row } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap"
 
-import "./StickyProfile.css";
-const stickyProfile = document.querySelector(".sticky-profile");
+import "../styles/StickyProfile.css"
+const stickyProfile = document.querySelector(".sticky-profile")
 
 const StickyProfile = (props) => {
-  const [coords, setCoords] = useState(0);
+  const [coords, setCoords] = useState(0)
 
   // console.log(props.coords);
   // window.addEventListener("scroll", () => {
@@ -15,7 +15,7 @@ const StickyProfile = (props) => {
   //   }
   // });
 
-  console.log(props.coords);
+  console.log(props.coords)
 
   useEffect(() => {
     // window.addEventListener("scroll", () => {
@@ -34,7 +34,7 @@ const StickyProfile = (props) => {
     // };
     // const observer = new IntersectionObserver();
     // observer.observe(props.coords);
-  }, []);
+  }, [])
 
   return (
     <div className="sticky-profile d-none border">
@@ -71,7 +71,7 @@ const StickyProfile = (props) => {
         </Row>
       </Container>
     </div>
-  );
-};
+  )
+}
 
-export default StickyProfile;
+export default StickyProfile
