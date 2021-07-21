@@ -8,21 +8,21 @@ class TopCourses extends Component{
         return(
             <div className='top-course '>
                 <div className='top-course-info mb-2'>
-                    <p className='top-course-title'>Today’s top courses</p>
+                    <p className='top-course-title pl-3'>Today’s top courses</p>
                     <span className='top-course-infoIcon'><HiInformationCircle/></span>
                 </div>
                 <div className='top-course-list'>
                       
                     <div className='top-course-author-link mb-2'>
-                        <p className='top-course-authorInfo'>
-                             <p className='top-course-author'>1. Digital Transformation</p>
-                             <p className='top-course-author-name'>Peter High</p>
+                        <p className='top-course-authorInfo pl-3'>
+                             <p className='top-course-author '>1. Digital Transformation</p>
+                             <p className='top-course-author-name '>Peter High</p>
                        </p>
                        
                         <p className='top-course-arrow'><BsBoxArrowUpRight/></p>
                     </div>
                     <div className='top-course-author-link mb-2'>
-                        <p className='top-course-authorInfo'>
+                        <p className='top-course-authorInfo pl-3'>
                              <p className='top-course-author'>2. Strive School</p>
                              <p className='top-course-author-name'>Tomas Berhane</p>
                        </p>
@@ -30,7 +30,7 @@ class TopCourses extends Component{
                         <p className='top-course-arrow'><BsBoxArrowUpRight/></p>
                     </div>
                     <div className='top-course-author-link mb-2'>
-                        <p className='top-course-authorInfo'>
+                        <p className='top-course-authorInfo pl-3'>
                              <p className='top-course-author'>2. Strive School</p>
                              <p className='top-course-author-name'>Stacey Gordon</p>
                        </p>
@@ -40,7 +40,7 @@ class TopCourses extends Component{
                    
                 </div>
                 <div>
-                    <p className='top-course-showMore'>Show more on Linkedin Learning <BiRightArrowAlt/> </p>
+                    <p className='top-course-showMore pl-3'>Show more on Linkedin Learning <BiRightArrowAlt/> </p>
                 </div>
             </div>
         )
