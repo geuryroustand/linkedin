@@ -1,8 +1,8 @@
-import "../../styles/EditProfile.css"
-import { AiFillQuestionCircle } from "react-icons/ai"
+import "../../styles/EditProfile.css";
+import { AiFillQuestionCircle } from "react-icons/ai";
 const EditProfile = () => {
   return (
-    <div id="edit-profile-div" className="p-3 border mb-3">
+    <div id="edit-profile-div" className="p-3 border mb-3 mt-4">
       <a href="/">
         <div className="border-bottom d-flex justify-content-between text-muted pb-3">
           <span>Edit public profile & URL</span>
@@ -20,7 +20,7 @@ const EditProfile = () => {
         </div>
       </a>
     </div>
-  )
-}
+  );
+};
 
-export default EditProfile
+export default EditProfile;

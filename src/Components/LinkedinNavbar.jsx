@@ -1,5 +1,5 @@
-import { withRouter } from "react-router"
-import "../styles/LinkedinNavbar.css"
+import { withRouter } from "react-router";
+import "../styles/LinkedinNavbar.css";
 
 import {
   Navbar,
@@ -12,16 +12,16 @@ import {
   Form,
   NavDropdown,
   Image,
-} from "react-bootstrap"
-import React from "react"
+} from "react-bootstrap";
+import React from "react";
 import {
   BsFillHouseDoorFill,
   BsPeopleFill,
   BsChatQuoteFill,
   BsBellFill,
   BsFillCalendarFill,
-} from "react-icons/bs"
-import { FaSuitcase } from "react-icons/fa"
+} from "react-icons/bs";
+import { FaSuitcase } from "react-icons/fa";
 
 const LinkedinNavbar = () => {
   return (
@@ -186,7 +186,7 @@ const LinkedinNavbar = () => {
         </Row>
       </Container>
     </div>
-  )
-}
+  );
+};
 
-export default withRouter(LinkedinNavbar)
+export default withRouter(LinkedinNavbar);
