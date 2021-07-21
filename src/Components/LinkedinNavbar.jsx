@@ -1,5 +1,5 @@
-import { withRouter } from "react-router"
-import "../styles/LinkedinNavbar.css"
+import { withRouter } from "react-router";
+import "../styles/LinkedinNavbar.css";
 
 import {
   Navbar,
@@ -12,19 +12,26 @@ import {
   Form,
   NavDropdown,
   Image,
-  Card
-
-} from "react-bootstrap"
-import React from "react"
+  Card,
+} from "react-bootstrap";
+import React from "react";
 import {
   BsFillHouseDoorFill,
   BsPeopleFill,
   BsChatQuoteFill,
   BsBellFill,
   BsFillCalendarFill,
-  BsSearch
-} from "react-icons/bs"
-import { FaSuitcase } from "react-icons/fa"
+  BsSearch,
+} from "react-icons/bs";
+import { FaSuitcase } from "react-icons/fa";
+import {
+  FcFilm,
+  FcComboChart,
+  FcBusinessContact,
+  FcPieChart,
+} from "react-icons/fc";
+
+import{ AiOutlineClose }from "react-icons/ai";
 
 const LinkedinNavbar = () => {
   return (
@@ -33,28 +40,34 @@ const LinkedinNavbar = () => {
         <Row>
           <Col className="ABC" xs={4}>
             {" "}
-            
             <Navbar>
-              <Navbar.Brand href="#home" className="d-flex" >
+              <Navbar.Brand href="#home" className="d-flex">
                 <Image
-                    id="logoIN"
-                    src="https://image.flaticon.com/icons/png/512/174/174857.png"
-                    width="36"
-                    height="36"
-                    className="mr-1"
-                  />
-                  
-                  <Form >
-                   <Form.Group id="NavIco" className="d-flex" controlId="searchBAR">
-                  <Form.Label><BsSearch /></Form.Label>
-                  <FormControl
-                    type="search"
-                    placeholder="Search"
-                    classNameName="mr-2"
-                    aria-label=" Search "
-                     classNameName="SearchMe"
-                  />
-                </Form.Group></Form>
+                  id="logoIN"
+                  src="https://image.flaticon.com/icons/png/512/174/174857.png"
+                  width="36"
+                  height="36"
+                  className="mr-1"
+                />
+
+                <Form>
+                  <Form.Group
+                    id="NavIco"
+                    className="d-flex"
+                    controlId="searchBAR"
+                  >
+                    <Form.Label>
+                      <BsSearch />
+                    </Form.Label>
+                    <FormControl
+                      type="search"
+                      placeholder="Search"
+                      classNameName="mr-2"
+                      
+                      classNameName="SearchMe"
+                    />
+                  </Form.Group>
+                </Form>
               </Navbar.Brand>
             </Navbar>
           </Col>
@@ -131,15 +144,22 @@ const LinkedinNavbar = () => {
               {" "}
               <NavDropdown id="navnMe" title="Me">
                 <NavDropdown.Item id="meForm" href="#action/3.2">
-                  <Row> 
-                    <Col > <Image
-                    id="minion"
-                    src="https://1075koolfm.com/wp-content/uploads/2020/02/miniomn.jpg"
-                    roundedCircle
-                    className="d-flex"
-                  /></Col> 
-                    <Col id="" className="d-flex m-1" >NAME </Col>
-                    <Col className="d-flex m-1" >Strive School Student =><br></br> Full Stack Developer </Col>
+                  <Row>
+                    <Col>
+                      {" "}
+                      <Image
+                        id="minion"
+                        src="https://1075koolfm.com/wp-content/uploads/2020/02/miniomn.jpg"
+                        roundedCircle
+                        className="d-flex"
+                      />
+                    </Col>
+                    <Col id="" className="d-flex m-1">
+                      NAME{" "}
+                    </Col>
+                    <Col className="d-flex m-1">
+                      Strive School Student =><br></br> Full Stack Developer{" "}
+                    </Col>
                   </Row>
                   <Button id="viewProf" variant="outline-primary">
                     View Profile
@@ -185,25 +205,76 @@ const LinkedinNavbar = () => {
             <Row>
               {" "}
               <NavDropdown id="navnMe" title="Work">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card>
+              <NavDropdown.Item id="closeCross" className="Visit" href="#action/3.1">
+                  <AiOutlineClose></AiOutlineClose>
+                </NavDropdown.Item>
+                <NavDropdown.Item className="Visit" href="#action/3.1">
+                  Visit more LinkedIn Products
+                </NavDropdown.Item>
+                <Card style={{ width: "23rem" }}>
+                  <Row className="XXX">
+                    <Col>
+                      <FcFilm></FcFilm>{" "}
+                    </Col>
+                    <Col>
+                      <FcComboChart></FcComboChart> 
+                    </Col>
+                    <Col>
+                      {" "}
+                      <FcBusinessContact></FcBusinessContact> 
+                    </Col>
+                    <Col>
+                      {" "}
+                      <FcPieChart> </FcPieChart>
+                    </Col>
+                  </Row>
+                  <Row className="XXX">
+                    <Col><FcFilm></FcFilm> </Col>
+                    <Col><FcPieChart> </FcPieChart> </Col>
+                    <Col><FcPieChart> </FcPieChart> </Col>
+                    <Col><FcPieChart> </FcPieChart> </Col>
+                  </Row>
+                  <Card.Body></Card.Body>
+                </Card>
+                <Card style={{ width: "23rem" }}>
+                  <Row className="XXX"></Row>
+                  <NavDropdown.Item className="Visit" href="#action/3.1">
+                    LinkedIn Business Services{" "}
+                  </NavDropdown.Item>
+                  <Card.Body>
+                    <NavDropdown.Item href="#action/3.1">
+                      <b>Talent Solutions</b>
+                      <p>
+                        <small>Find, attract and recruit talent</small>{" "}
+                      </p>{" "}
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.1">
+                      <b>Talent Solutions</b>
+                      <p>
+                        <small>Find, attract and recruit talent</small>{" "}
+                      </p>{" "}
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.1">
+                      <b>Talent Solutions</b>
+                      <p>
+                        <small>Find, attract and recruit talent</small>{" "}
+                      </p>{" "}
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.1">
+                      <b>Talent Solutions</b>
+                      <p>
+                        <small>Find, attract and recruit talent</small>{" "}
+                      </p>{" "}
+                    </NavDropdown.Item>
+                  </Card.Body>
+                </Card>
               </NavDropdown>
             </Row>
           </Col>
         </Row>
       </Container>
     </div>
-  )
-}
+  );
+};
 
-export default withRouter(LinkedinNavbar)
+export default withRouter(LinkedinNavbar);

@@ -102,6 +102,31 @@ a.nav-link:hover {
   border-radius: 15px;
   justify-content: center;
 }
+
+#navMe {
+  height: 200px;
+}
+#closeCross {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  size: 18px;
+}
+.Visit {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: bolder;
+}
+.XXX {
+  margin-left: 19px;
+  margin-right: 19px;
+  margin-bottom: 5px;
+
+  display: flex;
+  justify-content: center;
+  font-size: 36px;
+  color: rgb(101, 101, 102);
+}
 #logoFooter {
   width: 96px;
   height: 61px;
