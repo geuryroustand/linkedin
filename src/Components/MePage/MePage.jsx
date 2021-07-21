@@ -16,18 +16,17 @@ const MePage = (props) => {
   return (
     <Container id="me-page">
       <Row>
-        <Col xs={12} md={9}>
+        <Col xs={12} md={8}>
           <ProfileFace meProfile={props.meProfile} />
           <YourDashboard />
           <AboutMe meProfile={props.meProfile} />
           <Activity />
-          <ExperienceEducation />
+          <ExperienceEducation meProfile={props.meProfile} />
           <SkillAndEndorsement />
           <Accomplishments />
-          <ExperienceEducation meProfile={props.meProfile} />
           <Interests />
         </Col>
-        <Col xs={12} md={3}>
+        <Col xs={12} md={4}>
           <EditProfile />
           <YourDreamJob />
           <PeopleViewedAndKnow id="peopleviewed" people="People also viewed" />

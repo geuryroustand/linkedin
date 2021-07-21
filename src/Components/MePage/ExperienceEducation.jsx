@@ -24,8 +24,8 @@ const ExperienceEducation = ({ meProfile }) => {
       )
       if (response.ok) {
         const myExperiences = await response.json()
-        console.log(myExperiences)
         setExperiences(myExperiences)
+        console.log(myExperiences)
       } else {
         console.log("there was an error")
       }
@@ -34,17 +34,17 @@ const ExperienceEducation = ({ meProfile }) => {
     }
   }
 
-  /* use effect as component did update */
-  useEffect(() => {
-    fetchExperiences()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [addFormShow, editFormShow])
-
   /* use effect as component did mount */
   useEffect(() => {
     fetchExperiences()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [meProfile])
+
+  /* use effect as component did update */
+  useEffect(() => {
+    fetchExperiences()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [addFormShow, editFormShow])
 
   return (
     <div id="experience-education-div" className="border p-4 mb-3">
