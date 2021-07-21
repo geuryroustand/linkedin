@@ -47,12 +47,14 @@ function App(props) {
         <StickyProfile />
         <Route
           path="/"
+          exact
           render={(routerProps) => (
             <HomePage {...routerProps} meProfile={meProfile} />
           )}
         />
         <Route
           path="/me-page"
+          exact
           render={(routerProps) => (
             <MePage {...routerProps} meProfile={meProfile} />
           )}

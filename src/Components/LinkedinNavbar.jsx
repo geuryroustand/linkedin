@@ -41,7 +41,7 @@ const LinkedinNavbar = (props) => {
           <Col className="ABC" xs={4}>
             {" "}
             <Navbar>
-              <Navbar.Brand href="#home" className="d-flex">
+              <Navbar.Brand className="d-flex">
                 <Image
                   id="logoIN"
                   src="https://image.flaticon.com/icons/png/512/174/174857.png"
@@ -72,8 +72,8 @@ const LinkedinNavbar = (props) => {
 
           <Col xs={1}>
             <Row className="NavIco">
-              <Nav.Link href="#home">
-                <BsFillHouseDoorFill></BsFillHouseDoorFill>
+              <Nav.Link>
+                <BsFillHouseDoorFill />
               </Nav.Link>{" "}
             </Row>
             <Row className="navn">
@@ -83,7 +83,6 @@ const LinkedinNavbar = (props) => {
                   color: "rgb(112, 112, 112)",
                 }}
               >
-                {" "}
                 Home
               </Link>
             </Row>
@@ -92,51 +91,51 @@ const LinkedinNavbar = (props) => {
           <Col xs={1}>
             <Row className="NavIco">
               {" "}
-              <Nav.Link className="NavIco" href="#network">
+              <Nav.Link className="NavIco">
                 <BsPeopleFill></BsPeopleFill>{" "}
               </Nav.Link>
             </Row>
             <Row className="navn">
-              <Nav.Link href="#network"> My Network</Nav.Link>
+              <Nav.Link> My Network</Nav.Link>
             </Row>
           </Col>
           <Col xs={1}>
             <Row className="NavIco">
               {" "}
-              <Nav.Link href="#jobs">
+              <Nav.Link>
                 <FaSuitcase></FaSuitcase>{" "}
               </Nav.Link>{" "}
             </Row>
             <Row className="navn">
-              <Nav.Link href="#jobs"> Jobs</Nav.Link>
+              <Nav.Link> Jobs</Nav.Link>
             </Row>
           </Col>
           <Col xs={1}>
             <Row className="NavIco">
-              <Nav.Link href="#messaging">
+              <Nav.Link>
                 {" "}
                 <BsChatQuoteFill></BsChatQuoteFill>
               </Nav.Link>
             </Row>
             <Row className="navn">
-              <Nav.Link href="#messaging"> Messaging</Nav.Link>
+              <Nav.Link> Messaging</Nav.Link>
             </Row>
           </Col>
           <Col xs={1}>
             <Row className="NavIco">
-              <Nav.Link href="#notifications">
+              <Nav.Link>
                 {" "}
                 <BsBellFill></BsBellFill>
               </Nav.Link>
             </Row>
             <Row className="navn">
-              <Nav.Link href="#notifications"> Notification</Nav.Link>
+              <Nav.Link> Notification</Nav.Link>
             </Row>
           </Col>
 
           <Col xs={1}>
             <Row className="NavIco">
-              <Nav.Link href="#Me">
+              <Nav.Link>
                 <Col xs={6} md={4}>
                   <Image
                     id="minion"
@@ -176,53 +175,41 @@ const LinkedinNavbar = (props) => {
                   </Button>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item id="dropMe" href="#action/3.3">
+                <NavDropdown.Item id="dropMe">
                   <b>Account</b>
                 </NavDropdown.Item>{" "}
-                <NavDropdown.Item id="dropMe" href="#action/3.3">
+                <NavDropdown.Item id="dropMe">
                   Settings and Privacy
                 </NavDropdown.Item>{" "}
-                <NavDropdown.Item id="dropMe" href="#action/3.3">
-                  Help
-                </NavDropdown.Item>{" "}
-                <NavDropdown.Item id="dropMe" href="#action/3.3">
-                  Language
-                </NavDropdown.Item>
+                <NavDropdown.Item id="dropMe">Help</NavDropdown.Item>{" "}
+                <NavDropdown.Item id="dropMe">Language</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item id="dropMe" href="#action/3.3">
+                <NavDropdown.Item id="dropMe">
                   <b> Manage</b>
                 </NavDropdown.Item>{" "}
-                <NavDropdown.Item id="dropMe" href="#action/3.3">
-                  Post & Activity
-                </NavDropdown.Item>{" "}
-                <NavDropdown.Item id="dropMe" href="#action/3.3">
+                <NavDropdown.Item id="dropMe">Post & Activity</NavDropdown.Item>{" "}
+                <NavDropdown.Item id="dropMe">
                   Job Posting Account
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item id="dropMe" href="#action/3.3">
-                  Sign Out
-                </NavDropdown.Item>
+                <NavDropdown.Item id="dropMe">Sign Out</NavDropdown.Item>
               </NavDropdown>
             </Row>
           </Col>
 
           <Col xs={1}>
             <Row className="NavIco">
-              <Nav.Link href="#work">
+              <Nav.Link>
                 <BsFillCalendarFill></BsFillCalendarFill>{" "}
               </Nav.Link>
             </Row>
             <Row>
               {" "}
               <NavDropdown id="navnMe" title="Work">
-                <NavDropdown.Item
-                  id="closeCross"
-                  className="Visit"
-                  href="#action/3.1"
-                >
+                <NavDropdown.Item id="closeCross" className="Visit">
                   <AiOutlineClose></AiOutlineClose>
                 </NavDropdown.Item>
-                <NavDropdown.Item className="Visit" href="#action/3.1">
+                <NavDropdown.Item className="Visit">
                   Visit more LinkedIn Products
                 </NavDropdown.Item>
                 <Card style={{ width: "23rem" }}>
@@ -260,29 +247,29 @@ const LinkedinNavbar = (props) => {
                 </Card>
                 <Card style={{ width: "23rem" }}>
                   <Row className="XXX"></Row>
-                  <NavDropdown.Item className="Visit" href="#action/3.1">
+                  <NavDropdown.Item className="Visit">
                     LinkedIn Business Services{" "}
                   </NavDropdown.Item>
                   <Card.Body>
-                    <NavDropdown.Item href="#action/3.1">
+                    <NavDropdown.Item>
                       <b>Talent Solutions</b>
                       <p>
                         <small>Find, attract and recruit talent</small>{" "}
                       </p>{" "}
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.1">
+                    <NavDropdown.Item>
                       <b>Talent Solutions</b>
                       <p>
                         <small>Find, attract and recruit talent</small>{" "}
                       </p>{" "}
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.1">
+                    <NavDropdown.Item>
                       <b>Talent Solutions</b>
                       <p>
                         <small>Find, attract and recruit talent</small>{" "}
                       </p>{" "}
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.1">
+                    <NavDropdown.Item>
                       <b>Talent Solutions</b>
                       <p>
                         <small>Find, attract and recruit talent</small>{" "}
