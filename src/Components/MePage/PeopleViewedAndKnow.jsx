@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import "../../styles/PeopleViewedAndKnow.css";
-import { BsChevronCompactDown } from "react-icons/bs";
+import React, { useState } from "react"
+import "../../styles/PeopleViewedAndKnow.css"
+import { BsChevronCompactDown } from "react-icons/bs"
 
 const arrOfPeople = [
   "Magdalena Sochon",
@@ -29,15 +29,15 @@ const arrOfPeople = [
   "Ismail Turgul",
   "Max Lawrie ",
   "John Ako Tabe",
-];
-const arrOfPeopleFirst4 = arrOfPeople.slice(0, 4);
+]
+const arrOfPeopleFirst4 = arrOfPeople.slice(0, 4)
 
 // console.log(arrOfPeopleFirst4);
 const PeopleViewedAndKnow = (props) => {
-  const [peopleViewed, setPeopleViewed] = useState(false);
-  const [peopleKnow, setPeopleKnow] = useState(false);
+  const [peopleViewed, setPeopleViewed] = useState(false)
+  const [peopleKnow, setPeopleKnow] = useState(false)
 
-  const [arr, setArr] = useState(arrOfPeople);
+  const [arr, setArr] = useState(arrOfPeople)
 
   const handlerPeopleViewesClick = (e) => {
     if (props.id === "peopleviewed") {
@@ -45,10 +45,10 @@ const PeopleViewedAndKnow = (props) => {
       // console.log("peopleviewed");
     }
     if (props.id === "peopleknow") {
-      setPeopleKnow(!peopleKnow);
-      console.log("peopleKnow");
+      setPeopleKnow(!peopleKnow)
+      console.log("peopleKnow")
     }
-  };
+  }
 
   // console.log(peopleViewed, "people");
   // console.log(peopleKnow, "know");
@@ -67,9 +67,9 @@ const PeopleViewedAndKnow = (props) => {
         <h5>{props.people}</h5>
 
         {props.id === "peopleviewed"
-          ? arr.slice(0, 4).map((person) => {
+          ? arr.slice(0, 4).map((person, i) => {
               return (
-                <div className="d-flex justify-content-between">
+                <div key={i} className="d-flex justify-content-between">
                   <img
                     className="profile-viewed-know"
                     src="https://1075koolfm.com/wp-content/uploads/2020/02/miniomn.jpg"
@@ -88,11 +88,11 @@ const PeopleViewedAndKnow = (props) => {
                     </button>
                   </div>
                 </div>
-              );
+              )
             })
-          : arr.slice(4, 8).map((person) => {
+          : arr.slice(4, 8).map((person, i) => {
               return (
-                <div className="d-flex justify-content-between">
+                <div key={i} className="d-flex justify-content-between">
                   <img
                     className="profile-viewed-know"
                     src="https://1075koolfm.com/wp-content/uploads/2020/02/miniomn.jpg"
@@ -111,7 +111,7 @@ const PeopleViewedAndKnow = (props) => {
                     </button>
                   </div>
                 </div>
-              );
+              )
             })}
 
         {/* 
@@ -163,7 +163,7 @@ const PeopleViewedAndKnow = (props) => {
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PeopleViewedAndKnow;
+export default PeopleViewedAndKnow

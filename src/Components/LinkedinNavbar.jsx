@@ -1,5 +1,5 @@
-import { withRouter } from "react-router";
-import "../styles/LinkedinNavbar.css";
+import { withRouter } from "react-router"
+import "../styles/LinkedinNavbar.css"
 
 import {
   Navbar,
@@ -13,8 +13,8 @@ import {
   NavDropdown,
   Image,
   Card,
-} from "react-bootstrap";
-import React from "react";
+} from "react-bootstrap"
+import React from "react"
 import {
   BsFillHouseDoorFill,
   BsPeopleFill,
@@ -22,20 +22,20 @@ import {
   BsBellFill,
   BsFillCalendarFill,
   BsSearch,
-} from "react-icons/bs";
-import { FaSuitcase } from "react-icons/fa";
+} from "react-icons/bs"
+import { FaSuitcase } from "react-icons/fa"
 import {
   FcFilm,
   FcComboChart,
   FcBusinessContact,
   FcPieChart,
-} from "react-icons/fc";
+} from "react-icons/fc"
 
-import{ AiOutlineClose }from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai"
 
 const LinkedinNavbar = () => {
   return (
-    <div id="linked-in-navbar" classNameName="border-bottom">
+    <div id="linked-in-navbar" className="border-bottom">
       <Container>
         <Row>
           <Col className="ABC" xs={4}>
@@ -62,9 +62,7 @@ const LinkedinNavbar = () => {
                     <FormControl
                       type="search"
                       placeholder="Search"
-                      classNameName="mr-2"
-                      
-                      classNameName="SearchMe"
+                      className="mr-2 SearchMe"
                     />
                   </Form.Group>
                 </Form>
@@ -158,7 +156,7 @@ const LinkedinNavbar = () => {
                       NAME{" "}
                     </Col>
                     <Col className="d-flex m-1">
-                      Strive School Student =><br></br> Full Stack Developer{" "}
+                      Strive School Student <br /> Full Stack Developer{" "}
                     </Col>
                   </Row>
                   <Button id="viewProf" variant="outline-primary">
@@ -205,7 +203,11 @@ const LinkedinNavbar = () => {
             <Row>
               {" "}
               <NavDropdown id="navnMe" title="Work">
-              <NavDropdown.Item id="closeCross" className="Visit" href="#action/3.1">
+                <NavDropdown.Item
+                  id="closeCross"
+                  className="Visit"
+                  href="#action/3.1"
+                >
                   <AiOutlineClose></AiOutlineClose>
                 </NavDropdown.Item>
                 <NavDropdown.Item className="Visit" href="#action/3.1">
@@ -217,11 +219,11 @@ const LinkedinNavbar = () => {
                       <FcFilm></FcFilm>{" "}
                     </Col>
                     <Col>
-                      <FcComboChart></FcComboChart> 
+                      <FcComboChart></FcComboChart>
                     </Col>
                     <Col>
                       {" "}
-                      <FcBusinessContact></FcBusinessContact> 
+                      <FcBusinessContact></FcBusinessContact>
                     </Col>
                     <Col>
                       {" "}
@@ -229,10 +231,18 @@ const LinkedinNavbar = () => {
                     </Col>
                   </Row>
                   <Row className="XXX">
-                    <Col><FcFilm></FcFilm> </Col>
-                    <Col><FcPieChart> </FcPieChart> </Col>
-                    <Col><FcPieChart> </FcPieChart> </Col>
-                    <Col><FcPieChart> </FcPieChart> </Col>
+                    <Col>
+                      <FcFilm></FcFilm>{" "}
+                    </Col>
+                    <Col>
+                      <FcPieChart> </FcPieChart>{" "}
+                    </Col>
+                    <Col>
+                      <FcPieChart> </FcPieChart>{" "}
+                    </Col>
+                    <Col>
+                      <FcPieChart> </FcPieChart>{" "}
+                    </Col>
                   </Row>
                   <Card.Body></Card.Body>
                 </Card>
@@ -274,7 +284,7 @@ const LinkedinNavbar = () => {
         </Row>
       </Container>
     </div>
-  );
-};
+  )
+}
 
-export default withRouter(LinkedinNavbar);
+export default withRouter(LinkedinNavbar)
