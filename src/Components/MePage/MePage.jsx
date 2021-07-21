@@ -1,17 +1,16 @@
+import { Container, Row, Col } from "react-bootstrap"
+import ExperienceEducation from "./ExperienceEducation"
+import YourDashboard from "./YourDashboard"
+import AboutMe from "./AboutMe"
+import Activity from "./Activity"
+import Interests from "./Interests"
+import EditProfile from "./EditProfile"
+import YourDreamJob from "../YourDreamJob"
+import ProfileFace from "./ProfileFace"
+import PeopleViewedAndKnow from "./PeopleViewedAndKnow"
 
-import { Container, Row, Col } from "react-bootstrap";
-import ExperienceEducation from "./ExperienceEducation";
-import YourDashboard from "./YourDashboard";
-import AboutMe from "./AboutMe";
-import Activity from "./Activity";
-import Interests from "./Interests";
-import EditProfile from "./EditProfile";
-import YourDreamJob from "../YourDreamJob";
-import ProfileFace from "./ProfileFace";
-import PeopleViewedAndKnow from "./PeopleViewedAndKnow";
-
-import SkillAndEndorsement from "../SkillsAndEndorsement";
-import Accomplishments from "../Accomplishments";
+import SkillAndEndorsement from "../SkillsAndEndorsement"
+import Accomplishments from "../Accomplishments"
 
 const MePage = (props) => {
   return (
@@ -23,8 +22,9 @@ const MePage = (props) => {
           <AboutMe meProfile={props.meProfile} />
           <Activity />
           <ExperienceEducation />
-          <SkillAndEndorsement/>
-          <Accomplishments/>
+          <SkillAndEndorsement />
+          <Accomplishments />
+          <ExperienceEducation meProfile={props.meProfile} />
           <Interests />
         </Col>
         <Col xs={12} md={3}>
@@ -35,7 +35,7 @@ const MePage = (props) => {
         </Col>
       </Row>
     </Container>
-  );
-};
+  )
+}
 
-export default MePage;
+export default MePage
