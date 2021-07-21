@@ -1,5 +1,5 @@
 import { withRouter } from "react-router"
-import "../styles/LinkedinNavbar.css"
+import "../../styles/LinkedinNavbar.css"
 import {
   Nav,
   Col,

@@ -1,4 +1,4 @@
-import { withRouter } from "react-router"
+import { withRouter, Link } from "react-router-dom"
 import "../styles/LinkedinNavbar.css"
 
 import {
@@ -33,7 +33,7 @@ import {
 
 import { AiOutlineClose } from "react-icons/ai"
 
-const LinkedinNavbar = () => {
+const LinkedinNavbar = (props) => {
   return (
     <div id="linked-in-navbar" className="border-bottom">
       <Container>
@@ -77,7 +77,15 @@ const LinkedinNavbar = () => {
               </Nav.Link>{" "}
             </Row>
             <Row className="navn">
-              <Nav.Link href="#home"> Home</Nav.Link>
+              <Link
+                to={"/"}
+                style={{
+                  color: "rgb(112, 112, 112)",
+                }}
+              >
+                {" "}
+                Home
+              </Link>
             </Row>
           </Col>
 
@@ -141,7 +149,7 @@ const LinkedinNavbar = () => {
             <Row>
               {" "}
               <NavDropdown id="navnMe" title="Me">
-                <NavDropdown.Item id="meForm" href="#action/3.2">
+                <NavDropdown.Item id="meForm">
                   <Row>
                     <Col>
                       {" "}
@@ -159,7 +167,11 @@ const LinkedinNavbar = () => {
                       Strive School Student <br /> Full Stack Developer{" "}
                     </Col>
                   </Row>
-                  <Button id="viewProf" variant="outline-primary">
+                  <Button
+                    onClick={() => props.history.push("/me-page")}
+                    id="viewProf"
+                    variant="outline-primary"
+                  >
                     View Profile
                   </Button>
                 </NavDropdown.Item>

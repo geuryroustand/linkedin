@@ -8,9 +8,9 @@ import EditProfile from "./EditProfile"
 import YourDreamJob from "../YourDreamJob"
 import ProfileFace from "./ProfileFace"
 import PeopleViewedAndKnow from "./PeopleViewedAndKnow"
-
 import SkillAndEndorsement from "../SkillsAndEndorsement"
 import Accomplishments from "../Accomplishments"
+import LinkedInFooter from "./LinkedInFooter"
 
 const MePage = (props) => {
   return (
@@ -34,6 +34,7 @@ const MePage = (props) => {
           <PeopleViewedAndKnow id="peopleknow" people="People you may know" />
         </Col>
       </Row>
+      <LinkedInFooter />
     </Container>
   )
 }
