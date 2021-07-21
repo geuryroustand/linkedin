@@ -9,7 +9,6 @@
   background-position: center;
   background-size: cover;
   width: 100%;
-  height: 30%;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 }
@@ -27,14 +26,18 @@
 }
 
 .profil-rounded-img {
-  width: 152px;
-  height: 152px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   object-fit: cover;
 
   position: relative;
   bottom: 100px;
   border: solid 4px white;
+}
+
+.profile-pencil:hover {
+  background-color: #ebebeb;
 }
 .small-img-personal-info {
   width: 30px;
@@ -43,30 +46,47 @@
 }
 
 .p-personal-info {
-  /* height: 30px; */
   width: 7rem;
-  margin-right: 5px;
+  margin-right: 8rem;
+  color: #191919;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+}
 
-  /* margin-right: 10px; */
+.personal-text-color {
+  font-weight: 600;
+  line-height: 18px;
+  font-size: 14px;
+  color: #0a66c2;
 }
 .first-button {
   color: white;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
   background: #0a66c2;
   border: none;
   height: 2rem;
-  width: 5rem;
+  width: 6rem;
   margin-right: 10px;
   text-align: center;
   border-radius: 100px;
 }
 
 .first-button:hover {
-  opacity: 1;
+  background-color: rgba(5, 62, 119, 0.9);
+
+  /* background-color: rgb(1, 102, 194); */
+  /* background-color: red; */
 }
 .secondary-button,
 .third-button {
   background-color: white;
   color: #818181;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
   border: solid 1px;
   border-radius: 100px;
   height: 2rem;
@@ -75,10 +95,8 @@
 }
 .secondary-button:hover,
 .third-button:hover {
-  background-color: #818181;
-  color: white;
+  background-color: rgba(112, 107, 107, 0.3);
   border: solid 2px #818181;
-  border-radius: 150px;
 }
 .third-button {
   width: 4rem;
