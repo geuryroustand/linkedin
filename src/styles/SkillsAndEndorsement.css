@@ -1,0 +1,30 @@
+.skill-quiz{
+    margin-left: 26px;
+    border-color: #0277B7;
+    margin-left: 26px;
+    border-radius: 21px;
+    color: #0277B7;
+    background-color: white;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.skill-quiz:hover{
+    background-color: #ededff;
+   
+}
+.skill-list{
+    border-bottom: 1px solid rgb(201, 196, 196);
+    padding-bottom: 6px;
+    font-size: 18px;
+    font-weight:600
+}
+.showMore{
+    border: none;
+    background-color: white;
+    font-weight: 600;
+    color: #908989;
+}
+.show-more-div{
+    display: flex;
+    justify-content: center;
+}

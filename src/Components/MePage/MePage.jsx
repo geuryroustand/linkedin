@@ -1,3 +1,4 @@
+
 import { Container, Row, Col } from "react-bootstrap";
 import ExperienceEducation from "./ExperienceEducation";
 import YourDashboard from "./YourDashboard";
@@ -9,6 +10,9 @@ import YourDreamJob from "../YourDreamJob";
 import ProfileFace from "./ProfileFace";
 import PeopleViewedAndKnow from "./PeopleViewedAndKnow";
 
+import SkillAndEndorsement from "../SkillsAndEndorsement";
+import Accomplishments from "../Accomplishments";
+
 const MePage = (props) => {
   return (
     <Container id="me-page">
@@ -19,6 +23,8 @@ const MePage = (props) => {
           <AboutMe meProfile={props.meProfile} />
           <Activity />
           <ExperienceEducation />
+          <SkillAndEndorsement/>
+          <Accomplishments/>
           <Interests />
         </Col>
         <Col xs={12} md={3}>
