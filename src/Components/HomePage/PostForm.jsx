@@ -9,30 +9,45 @@ import { Modal, Button } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 
 import { FaIndent } from "react-icons/fa";
+
 const PostForm = () => {
-  const [enteredPost, setEnteredPost] = useState("");
+  const [enteredPost, setEnteredPost] = useState({
+    text: "",
+  });
 
   const handlerPost = (event) => {
-    setEnteredPost(event.target.value);
+    setEnteredPost({ text: event.target.value });
   };
+
+  // console.log(enteredPost);
 
   const submitPost = async (event) => {
     event.preventDefault();
 
     // const dataPost =
-    const post = await fetch(
-      "https://striveschool-api.herokuapp.com/api/posts/",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization:
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1MmMxMDBlZmU3ODAwMTU1YzM0OWIiLCJpYXQiOjE2MjY5MzU5OTgsImV4cCI6MTYyODE0NTU5OH0.ayURV_hOBVQ3kWS5Cagdlkftwl9Cxoq3RA-VXZ1-gzA",
-        },
+    try {
+      const response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/posts/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY2ODcxYjM0NTViYTAwMTUyMjdkZjciLCJpYXQiOjE2MjY3NjkxODAsImV4cCI6MTYyNzk3ODc4MH0.V4nubxjI1arEROLfw4Xf_rjLxNCsDBT1P3WY5Gnh8zY",
+          },
 
-        body: JSON.stringify(enteredPost),
+          body: JSON.stringify(enteredPost),
+        }
+      );
+
+      if (response.ok) {
+        console.log("post done");
+      } else {
+        console.log("there was an error ");
       }
-    );
+    } catch (error) {
+      console.log(error);
+    }
   };
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -72,10 +87,10 @@ const PostForm = () => {
                   </p>
                 </button>
               </div>
-
+              {/* {enteredPost && setShow(false)} */}
               <input
                 className="post-input"
-                value={enteredPost}
+                // value={enteredPost.text}
                 placeholder="What do you want to talk about"
                 type="text"
                 name=""
@@ -104,8 +119,23 @@ const PostForm = () => {
             name=""
             id=""
             placeholder="Start a post"
+            // value={enteredPost.text}
             onClick={handleShow}
           />
+
+          {/* <form onSubmit={submitPost}>
+            <input
+              className="post-input"
+              value={enteredPost.text}
+              placeholder="What do you want to talk about"
+              type="text"
+              name=""
+              id=""
+              onChange={handlerPost}
+            />{" "}
+            <br />
+            <button type="submit"></button>
+          </form> */}
         </div>
         <div className="d-flex justify-content-between my-2">
           <div className="post-icons">
