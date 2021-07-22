@@ -8,7 +8,7 @@ import TopCourses from "./TopCourses"
 
 const HomePage = (props) => {
   return (
-    <Container id="me-page">
+    <Container className="page-container">
       <Row>
         <Col xs={12} md={2}>
           <ProfileHome meProfile={props.meProfile} />

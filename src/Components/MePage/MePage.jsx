@@ -1,20 +1,20 @@
-import { Container, Row, Col } from "react-bootstrap";
-import ExperienceEducation from "./ExperienceEducation";
-import YourDashboard from "./YourDashboard";
-import AboutMe from "./AboutMe";
-import Activity from "./Activity";
-import Interests from "./Interests";
-import EditProfile from "./EditProfile";
-import YourDreamJob from "../YourDreamJob";
-import ProfileFace from "./ProfileFace";
-import PeopleViewedAndKnow from "./PeopleViewedAndKnow";
-import SkillAndEndorsement from "../SkillsAndEndorsement";
-import Accomplishments from "../Accomplishments";
-import LinkedInFooter from "./LinkedInFooter";
+import { Container, Row, Col } from "react-bootstrap"
+import ExperienceEducation from "./ExperienceEducation"
+import YourDashboard from "./YourDashboard"
+import AboutMe from "./AboutMe"
+import Activity from "./Activity"
+import Interests from "./Interests"
+import EditProfile from "./EditProfile"
+import YourDreamJob from "../YourDreamJob"
+import ProfileFace from "./ProfileFace"
+import PeopleViewedAndKnow from "./PeopleViewedAndKnow"
+import SkillAndEndorsement from "../SkillsAndEndorsement"
+import Accomplishments from "../Accomplishments"
+import LinkedInFooter from "./LinkedInFooter"
 
 const MePage = (props) => {
   return (
-    <Container id="me-page">
+    <Container className="page-container">
       <Row>
         <Col xs={12} md={8}>
           <ProfileFace meProfile={props.meProfile} />
@@ -35,7 +35,7 @@ const MePage = (props) => {
       </Row>
       <LinkedInFooter />
     </Container>
-  );
-};
+  )
+}
 
-export default MePage;
+export default MePage
