@@ -11,7 +11,7 @@ import { NavDropdown } from "react-bootstrap";
 import profileImg from "./profileImg.jpg";
 import "./Posts.css";
 
-const Posts = () => {
+const Posts = (props) => {
   return (
     <>
       <div className="d-flex my-2">
@@ -32,7 +32,7 @@ const Posts = () => {
           <img className="post-profile-img" src={profileImg} alt="" />
           <div className="post-personal-info">
             <a className="font-weight-bold dark-name-color" href="#">
-              Geury Roustand
+              {props.post.username}
             </a>
             <span className="text-muted">. 1st</span>
             <p className="text-muted">Student at Strive School</p>
@@ -45,13 +45,7 @@ const Posts = () => {
           <p className="hr"></p>
         </div>
 
-        <p>
-          On Honeypot, companies apply to you with salaries between €65k–€120k
-          for Fullstack developers and tech stack upfront. This means you can
-          easily compare offers side by side and choose the one that’s best for
-          you. Forget headhunters and their clumsy back and forth, signup to
-          Honeypot and find a job you love.
-        </p>
+        <p>{props.post.text}</p>
 
         <div>
           <AiOutlineLike className="mr-2" />

@@ -42,6 +42,9 @@ const PostForm = () => {
 
       if (response.ok) {
         console.log("post done");
+        setEnteredPost({
+          text: "",
+        });
       } else {
         console.log("there was an error ");
       }
@@ -113,7 +116,7 @@ const PostForm = () => {
         <div className="d-flex">
           <img className="post-profile-img mr-2" src={profileImg} alt="" />
 
-          <input
+          {/* <input
             className="text-muted"
             type="text"
             name=""
@@ -121,9 +124,9 @@ const PostForm = () => {
             placeholder="Start a post"
             // value={enteredPost.text}
             onClick={handleShow}
-          />
+          /> */}
 
-          {/* <form onSubmit={submitPost}>
+          <form onSubmit={submitPost} className="w-100">
             <input
               className="post-input"
               value={enteredPost.text}
@@ -134,8 +137,8 @@ const PostForm = () => {
               onChange={handlerPost}
             />{" "}
             <br />
-            <button type="submit"></button>
-          </form> */}
+            {/* <button type="submit"></button> */}
+          </form>
         </div>
         <div className="d-flex justify-content-between my-2">
           <div className="post-icons">
@@ -160,7 +163,7 @@ const PostForm = () => {
           </div>
         </div>
       </div>
-      <Example />
+      {/* <Example /> */}
     </div>
   );
 };

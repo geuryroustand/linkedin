@@ -1,10 +1,10 @@
-import { Container, Row, Col } from "react-bootstrap"
-import ProfileHome from "./ProfileHome"
-import PostForm from "./PostForm"
-import Posts from "./Posts"
-import FooterSmall from "./FooterSmall"
-import CommunityPanel from "./CommunityPanel"
-import TopCourses from "./TopCourses"
+import { Container, Row, Col } from "react-bootstrap";
+import ProfileHome from "./ProfileHome";
+
+import HomePost from "./HomePost";
+import FooterSmall from "./FooterSmall";
+import CommunityPanel from "./CommunityPanel";
+import TopCourses from "./TopCourses";
 
 const HomePage = (props) => {
   return (
@@ -15,8 +15,7 @@ const HomePage = (props) => {
           <CommunityPanel />
         </Col>
         <Col xs={12} md={7}>
-          <PostForm />
-          <Posts />
+          <HomePost />
         </Col>
         <Col xs={12} md={3}>
           <TopCourses />
@@ -24,7 +23,7 @@ const HomePage = (props) => {
         </Col>
       </Row>
     </Container>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
