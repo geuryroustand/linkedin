@@ -19,6 +19,7 @@ const PostForm = () => {
   const submitPost = async (event) => {
     event.preventDefault();
 
+    // const dataPost =
     const post = await fetch(
       "https://striveschool-api.herokuapp.com/api/posts/",
       {
