@@ -4,7 +4,7 @@ import { FaBookmark } from "react-icons/fa"
 
 const ProfileHome = ({ meProfile }) => {
   return (
-    <div id="profile-home-div" className="overflow-hidden border">
+    <div id="profile-home-div" className="overflow-hidden border mb-3">
       <div
         className="position-relative"
         style={{

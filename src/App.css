@@ -1,6 +1,7 @@
-#me-page {
-  margin-top: 5rem;
+.page-container {
+  margin-top: 7rem;
 }
+
 .container {
-  max-width: 75rem !important;
+  max-width: 80rem !important;
 }
