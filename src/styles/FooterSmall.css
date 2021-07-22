@@ -1,0 +1,57 @@
+#logoFooter {
+  width: 60px;
+  height: auto;
+}
+
+.FOOOOOOOOOTer {
+  font-size: 12px;
+  color: rgb(43, 43, 43);
+  line-height: 25px;
+  margin-top: 50px;
+}
+
+.DROP {
+  justify-content: flex-end;
+  color: rgb(119, 113, 113);
+  padding: 0px;
+  font-size: 12px;
+  background-color: #f3f2ef;
+  border: none;
+}
+.DROP:hover {
+  background-color: #f3f2ef;
+  color: rgb(44, 90, 150);
+  border-radius: 0%;
+}
+
+#about:hover {
+  color: blue;
+  text-decoration: underline;
+}
+.drop-inside {
+  font-size: 11px;
+  color: rgb(99, 97, 96);
+  font-weight: bolder;
+  padding: 1px;
+  padding-left: 10px;
+}
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show > .btn-primary.dropdown-toggle {
+  color: rgb(99, 97, 96);
+  background-color: transparent;
+  border-color: transparent;
+}
+.btn-primary.focus,
+.btn-primary:focus {
+  color: rgb(99, 97, 96);
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: 0 0 0 0.2rem transparent;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem transparent;
+}
