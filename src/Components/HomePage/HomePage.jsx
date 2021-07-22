@@ -2,6 +2,7 @@ import { Container, Row, Col } from "react-bootstrap"
 import ProfileHome from "./ProfileHome"
 import PostForm from "./PostForm"
 import Posts from "./Posts"
+import FooterSmall from "./FooterSmall"
 
 const HomePage = (props) => {
   return (
@@ -14,7 +15,9 @@ const HomePage = (props) => {
           <PostForm />
           <Posts />
         </Col>
-        <Col xs={12} md={3}></Col>
+        <Col xs={12} md={3}>
+          <FooterSmall />
+        </Col>
       </Row>
     </Container>
   )
