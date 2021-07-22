@@ -1,6 +1,7 @@
 import "../../styles/ProfileHome.css"
 import { BsSlashSquareFill } from "react-icons/bs"
 import { FaBookmark } from "react-icons/fa"
+import { Link } from "react-router-dom"
 
 const ProfileHome = ({ meProfile }) => {
   return (
@@ -14,16 +15,20 @@ const ProfileHome = ({ meProfile }) => {
           backgroundPosition: "center",
         }}
       >
-        <div className="profile-pic overflow-hidden position-absolute">
-          <img
-            className="img-fluid"
-            src={meProfile && meProfile.image}
-            alt="profile pic"
-          />
-        </div>
+        <Link to="/me-page">
+          <div className="profile-pic overflow-hidden position-absolute">
+            <img
+              className="img-fluid"
+              src={meProfile && meProfile.image}
+              alt="profile pic"
+            />
+          </div>
+        </Link>
       </div>
       <div className="name-title border-bottom text-center pt-5 pb-2 px-2">
-        <h6>{meProfile && `${meProfile.name} ${meProfile.surname}`}</h6>
+        <Link to="/me-page">
+          <h6>{meProfile && `${meProfile.name} ${meProfile.surname}`}</h6>
+        </Link>
         <p className="text-muted">{meProfile && meProfile.title}</p>
       </div>
       <div className="views border-bottom py-2">

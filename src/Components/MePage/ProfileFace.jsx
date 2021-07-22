@@ -1,28 +1,60 @@
-import React, { useRef, useState, useEffect } from "react";
-import "../../styles/ProfileFace.css";
-
-import striveLogo from "./strive-logo.ico";
-import { BiPencil } from "react-icons/bi";
-import profileBg from "./profileBg.png";
-import StickyProfile from "../StickyProfile";
+import React, { useRef, useState, useEffect } from "react"
+import "../../styles/ProfileFace.css"
+import { Form } from "react-bootstrap"
+import striveLogo from "./strive-logo.ico"
+import { BiPencil } from "react-icons/bi"
+import profileBg from "./profileBg.png"
+import StickyProfile from "../StickyProfile"
 
 // console.log(profileImg);
 const ProfileFace = ({ meProfile }) => {
-  const [coords, setCoords] = useState();
-  const [exaCoords, setExaCoords] = useState(false);
-  let currentCoords = useRef();
+  const [picture, setPicture] = useState(null)
+  const [showPicForm, setShowPicForm] = useState(false)
+  const [exaCoords, setExaCoords] = useState(false)
+  let currentCoords = useRef()
 
   useEffect(() => {
-    const selected = currentCoords.current.getBoundingClientRect();
+    const selected = currentCoords.current.getBoundingClientRect()
 
     window.addEventListener("scroll", () => {
       if (window.scrollY >= selected.top) {
-        setExaCoords(true);
+        setExaCoords(true)
       } else {
-        setExaCoords(false);
+        setExaCoords(false)
       }
-    });
-  }, []);
+    })
+  }, [])
+
+  const handleSubmitPicture = async (e) => {
+    e.preventDefault()
+
+    const formData = new FormData()
+    formData.append("picture", picture)
+    console.log(formData)
+    try {
+      const response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/${meProfile._id}/picture`,
+        {
+          method: "POST",
+          body: formData,
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY2ODcxYjM0NTViYTAwMTUyMjdkZjciLCJpYXQiOjE2MjY3NjkxODAsImV4cCI6MTYyNzk3ODc4MH0.V4nubxjI1arEROLfw4Xf_rjLxNCsDBT1P3WY5Gnh8zY",
+
+            /* "Content-Type": "multipart/form-data", */
+          },
+        }
+      )
+
+      if (response.ok) {
+        setShowPicForm(!showPicForm)
+      } else {
+        console.log("there was an error")
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <div className="profile-main border mb-3 mt-4">
@@ -38,6 +70,7 @@ const ProfileFace = ({ meProfile }) => {
       <div className="profile-info">
         <div className="rounded-img-section">
           <img
+            onClick={() => setShowPicForm(!showPicForm)}
             src={meProfile && meProfile.image}
             className="profil-rounded-img"
             alt=""
@@ -60,6 +93,19 @@ const ProfileFace = ({ meProfile }) => {
 
         <div className="d-flex justify-content-between ">
           <div className="personal-info  pb-3">
+            {showPicForm && (
+              <form onSubmit={handleSubmitPicture}>
+                <Form.Group controlId="pictureForm">
+                  <Form.Label>Upload Picture</Form.Label>
+                  <Form.Control
+                    onChange={(e) => setPicture(e.target.files[0])}
+                    /* value={picture} */
+                    type="file"
+                  />
+                </Form.Group>
+                <button type="submit">Submit</button>
+              </form>
+            )}
             <h2>{meProfile && `${meProfile.name} ${meProfile.surname}`}</h2>
             <p>{meProfile && meProfile.title}</p>
             {meProfile && (
@@ -129,7 +175,7 @@ const ProfileFace = ({ meProfile }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProfileFace;
+export default ProfileFace

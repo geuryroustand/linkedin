@@ -30,7 +30,7 @@
   height: 160px;
   border-radius: 50%;
   object-fit: cover;
-
+  cursor: pointer;
   position: relative;
   bottom: 100px;
   border: solid 4px white;
