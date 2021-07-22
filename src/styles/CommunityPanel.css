@@ -1,0 +1,33 @@
+.community-panel{
+    border-radius: 10px;
+    
+    background-color: white;
+}
+.community-events{
+    display: flex;
+}
+.community-event-link{
+    display: flex;
+    flex: 1;
+}
+.community-discoverMore{
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    color: rgb(100, 99, 99);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.community-discoverMore:hover{
+    background-color: rgb(233, 230, 230);
+}
+.community-color{
+    color: #0277B7;
+    font-size: 12px;
+    font-weight: 600;
+    padding-left: 3px;
+}
+.community-plus{
+    position: relative;
+    bottom: 5px;
+}
