@@ -1,36 +1,37 @@
-import React, { useRef, useState, useEffect } from "react"
-import "../../styles/ProfileFace.css"
-import { Form } from "react-bootstrap"
-import striveLogo from "./strive-logo.ico"
-import { BiPencil } from "react-icons/bi"
-import profileBg from "./profileBg.png"
-import StickyProfile from "../StickyProfile"
+import React, { useRef, useState, useEffect } from "react";
+import "../../styles/ProfileFace.css";
+import { Form } from "react-bootstrap";
+import striveLogo from "./strive-logo.ico";
+import { BiPencil } from "react-icons/bi";
+import profileBg from "./profileBg.png";
+import StickyProfile from "../StickyProfile";
 
 // console.log(profileImg);
 const ProfileFace = ({ meProfile }) => {
-  const [picture, setPicture] = useState(null)
-  const [showPicForm, setShowPicForm] = useState(false)
-  const [exaCoords, setExaCoords] = useState(false)
-  let currentCoords = useRef()
+  const [picture, setPicture] = useState(null);
+  const [showPicForm, setShowPicForm] = useState(false);
+  const [exaCoords, setExaCoords] = useState(false);
+  let currentCoords = useRef();
 
   useEffect(() => {
-    const selected = currentCoords.current.getBoundingClientRect()
+    const selected = currentCoords.current.getBoundingClientRect();
 
     window.addEventListener("scroll", () => {
       if (window.scrollY >= selected.top) {
-        setExaCoords(true)
+        setExaCoords(true);
       } else {
-        setExaCoords(false)
+        setExaCoords(false);
       }
-    })
-  }, [])
+    });
+  }, []);
 
   const handleSubmitPicture = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    const formData = new FormData()
-    formData.append("picture", picture)
-    console.log(formData)
+    const formData = new FormData();
+    formData.append("profile", picture);
+
+    console.log(formData);
     try {
       const response = await fetch(
         `https://striveschool-api.herokuapp.com/api/profile/${meProfile._id}/picture`,
@@ -44,17 +45,17 @@ const ProfileFace = ({ meProfile }) => {
             /* "Content-Type": "multipart/form-data", */
           },
         }
-      )
+      );
 
       if (response.ok) {
-        setShowPicForm(!showPicForm)
+        setShowPicForm(!showPicForm);
       } else {
-        console.log("there was an error")
+        console.log("there was an error");
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   return (
     <div className="profile-main border mb-3 mt-4">
@@ -175,7 +176,7 @@ const ProfileFace = ({ meProfile }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProfileFace
+export default ProfileFace;
