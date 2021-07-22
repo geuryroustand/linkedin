@@ -1,0 +1,85 @@
+.post-form {
+  height: 9rem;
+  background-color: white;
+  border-radius: 12px;
+}
+.post-form .post-center {
+  padding: 20px;
+}
+
+.post-form .post-profile-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.post-form input {
+  height: 50px;
+  width: 89%;
+  border-radius: 40px;
+  color: #818181;
+  border: solid 1px;
+  cursor: pointer;
+}
+
+.post-form input::-webkit-input-placeholder {
+  font-size: 15px;
+  line-height: 3;
+  font-weight: 500;
+  padding-left: 10px;
+}
+
+.post-form input:hover {
+  background-color: rgba(112, 107, 107, 0.1);
+}
+
+.post-form input:focus {
+  outline: none;
+}
+
+.post-form span {
+  padding-left: 6px;
+  line-height: 28px;
+  font-weight: 600;
+  color: #818181;
+}
+.post-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+  /* padding-top: 10px; */
+  /* padding-bottom: 10px; */
+  /* width: 5rem; */
+}
+
+.post-form .post-icons:hover {
+  background-color: rgba(112, 107, 107, 0.1);
+  /* height: 2.2rem; */
+  border-radius: 12px;
+}
+
+.post-user {
+  background-color: transparent;
+  color: #818181;
+  border: solid 1px;
+  border-radius: 40px;
+  margin-left: 5px;
+  height: 30px;
+}
+
+.post-input {
+  border: none;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.post-input:focus {
+  outline: none;
+}
+
+.modal-box {
+  height: 15rem;
+}

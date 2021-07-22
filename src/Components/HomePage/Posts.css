@@ -1,0 +1,60 @@
+.post-main {
+  background-color: white;
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.post-profile-img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.post-personal-info {
+  cursor: pointer;
+  margin-right: 23rem;
+}
+
+.select {
+  /* appearance: none; */
+  border: none !important;
+  background-color: transparent;
+}
+
+.select:focus {
+  outline: none;
+}
+
+.buttons-comments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* padding: 40px; */
+  /* height: 40px; */
+}
+
+.post-button button {
+  background-color: transparent;
+  border: none;
+  line-height: 20px;
+  font-weight: 600;
+  color: #818181;
+  padding: 12px;
+}
+
+.post-button button:hover {
+  background-color: rgba(112, 107, 107, 0.1);
+
+  border-radius: 12px;
+}
+
+.post-button-icons {
+  font-size: 25px;
+}
+
+.dark-name-color {
+  color: black;
+}

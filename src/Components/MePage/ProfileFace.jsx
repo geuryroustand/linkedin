@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import "../../styles/ProfileFace.css";
-import profileImg from "./profileImg.jpg";
+
 import striveLogo from "./strive-logo.ico";
 import { BiPencil } from "react-icons/bi";
 import profileBg from "./profileBg.png";
