@@ -43,7 +43,7 @@ function App(props) {
   return (
     <Router>
       <div className="App">
-        <LinkedinNavbar />
+        <LinkedinNavbar meProfile={meProfile} />
         <StickyProfile />
         <Route
           path="/"
@@ -56,7 +56,11 @@ function App(props) {
           path="/me-page"
           exact
           render={(routerProps) => (
-            <MePage {...routerProps} meProfile={meProfile} />
+            <MePage
+              {...routerProps}
+              meProfile={meProfile}
+              fetchProfile={fetchProfile}
+            />
           )}
         />
       </div>

@@ -12,6 +12,8 @@ const PostExperienceForm = (props) => {
     area: "",
   })
 
+  const [experiencePic, setExperiencePic] = useState(null)
+
   /* use effect as component did mount */
   useEffect(() => {
     if (props.experienceId) {
@@ -116,6 +118,33 @@ const PostExperienceForm = (props) => {
     }
   }
 
+  /* Function to upload company logo */
+  const postCompanyLogo = async (experienceId) => {
+    const formData = new FormData()
+    formData.append("experience", experiencePic)
+    try {
+      const response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/${props.meProfile._id}/experiences/${experienceId}/picture`,
+        {
+          method: "POST",
+          body: formData,
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY2ODcxYjM0NTViYTAwMTUyMjdkZjciLCJpYXQiOjE2MjY3NjkxODAsImV4cCI6MTYyNzk3ODc4MH0.V4nubxjI1arEROLfw4Xf_rjLxNCsDBT1P3WY5Gnh8zY",
+          },
+        }
+      )
+
+      if (response.ok) {
+        console.log("logo posted!")
+      } else {
+        console.log("there was an error")
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <Form onSubmit={(e) => handlePostAndEdit(e)}>
       <Form.Group className="mb-3" controlId="company">
@@ -175,6 +204,23 @@ const PostExperienceForm = (props) => {
           placeholder="Write the area."
         />
       </Form.Group>
+      {props.experienceId && (
+        <Form.Group className="mb-3" controlId="profilePicForm">
+          <Form.Label>Company Logo</Form.Label>
+          <Form.Control
+            onChange={(e) => {
+              setExperiencePic(e.target.files[0])
+            }}
+            type="file"
+          />
+          <button
+            onClick={() => postCompanyLogo(props.experienceId)}
+            type="button"
+          >
+            Upload
+          </button>
+        </Form.Group>
+      )}
 
       <div className="d-flex justify-content-between">
         <Button

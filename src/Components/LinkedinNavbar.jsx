@@ -139,7 +139,7 @@ const LinkedinNavbar = (props) => {
                 <Col xs={6} md={4}>
                   <Image
                     id="minion"
-                    src="https://1075koolfm.com/wp-content/uploads/2020/02/miniomn.jpg"
+                    src={props.meProfile && props.meProfile.image}
                     roundedCircle
                   />
                 </Col>{" "}
@@ -154,13 +154,14 @@ const LinkedinNavbar = (props) => {
                       {" "}
                       <Image
                         id="minion"
-                        src="https://1075koolfm.com/wp-content/uploads/2020/02/miniomn.jpg"
+                        src={props.meProfile && props.meProfile.image}
                         roundedCircle
                         className="d-flex"
                       />
                     </Col>
                     <Col id="" className="d-flex m-1">
-                      NAME{" "}
+                      {props.meProfile &&
+                        `${props.meProfile.name} ${props.meProfile.surname}`}
                     </Col>
                     <Col className="d-flex m-1">
                       Strive School Student <br /> Full Stack Developer{" "}

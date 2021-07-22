@@ -17,7 +17,10 @@ const MePage = (props) => {
     <Container className="page-container">
       <Row>
         <Col xs={12} md={8}>
-          <ProfileFace meProfile={props.meProfile} />
+          <ProfileFace
+            fetchProfile={props.fetchProfile}
+            meProfile={props.meProfile}
+          />
           <YourDashboard />
           <AboutMe meProfile={props.meProfile} />
           <Activity />

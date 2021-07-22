@@ -65,8 +65,13 @@ const ExperienceEducation = ({ meProfile }) => {
                 <div className="infoContainer">
                   <div className="image-div">
                     <img
+                      style={{ width: "65px", height: "65px" }}
                       className="Ex-image"
-                      src="http://placehold.it/65"
+                      src={
+                        experience.image
+                          ? experience.image
+                          : "http://placehold.it/65"
+                      }
                       alt={experience.company + " logo"}
                     />
                   </div>
