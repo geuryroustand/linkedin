@@ -34,7 +34,7 @@ const arrOfPeople = [
 
 // console.log(arrOfPeopleFirst4);
 const PeopleViewedAndKnow = (props) => {
-  const [peopleViewed, setPeopleViewed] = useState(false);
+  // const [peopleViewed, setPeopleViewed] = useState(false);
   const [peopleKnow, setPeopleKnow] = useState(false);
 
   const [arr, setArr] = useState(arrOfPeople);
@@ -77,7 +77,7 @@ const PeopleViewedAndKnow = (props) => {
                   />
 
                   <div className="mr-4">
-                    <a href="#" className="text-muted ">
+                    <a href="/" className="text-muted ">
                       <span className="profile-viewer-know-text">{person}</span>
                       <span className="text-muted">.</span>
                       <span>1st</span>
@@ -100,7 +100,7 @@ const PeopleViewedAndKnow = (props) => {
                   />
 
                   <div className="mr-4">
-                    <a href="#" className="text-muted ">
+                    <a href="/" className="text-muted ">
                       <span className="profile-viewer-know-text">{person}</span>
                       <span className="text-muted">.</span>
                       <span>1st</span>
