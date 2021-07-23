@@ -1,30 +1,31 @@
-import React from "react";
-import { BsThreeDots } from "react-icons/bs";
-import { BiWorld } from "react-icons/bi";
-import { AiOutlineLike } from "react-icons/ai";
-import { FcLike } from "react-icons/fc";
-import { RiSendPlaneFill } from "react-icons/ri";
-import { FaRegCommentDots, FaShare } from "react-icons/fa";
+import React from "react"
+import { BsThreeDots } from "react-icons/bs"
+import { BiWorld } from "react-icons/bi"
+import { AiOutlineLike } from "react-icons/ai"
+import { FcLike } from "react-icons/fc"
+import { RiSendPlaneFill } from "react-icons/ri"
+import { FaRegCommentDots, FaShare } from "react-icons/fa"
+import { format, parseISO } from "date-fns"
 
-import "./Posts.css";
-import { useState } from "react";
+import "../../styles/Posts.css"
+import { useState } from "react"
 
 const Posts = (props) => {
-  const [dot, setDot] = useState();
-  const [postPic, setPostPic] = useState();
+  const [dot, setDot] = useState()
+  const [postPic, setPostPic] = useState()
 
   const handlerClick = () => {
-    setDot(!dot);
-  };
+    setDot(!dot)
+  }
 
-  console.log(props.postId._id);
+  console.log(props.postId._id)
 
   const postPicData = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    const formData = new FormData();
+    const formData = new FormData()
 
-    formData.append("post", postPic);
+    formData.append("post", postPic)
 
     try {
       const response = await fetch(
@@ -37,17 +38,17 @@ const Posts = (props) => {
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY2ODcxYjM0NTViYTAwMTUyMjdkZjciLCJpYXQiOjE2MjY3NjkxODAsImV4cCI6MTYyNzk3ODc4MH0.V4nubxjI1arEROLfw4Xf_rjLxNCsDBT1P3WY5Gnh8zY",
           },
         }
-      );
+      )
 
       if (response.ok) {
-        console.log("logo posted!");
+        console.log("logo posted!")
       } else {
-        console.log("there was an error");
+        console.log("there was an error")
       }
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
-  };
+  }
 
   return (
     <>
@@ -75,12 +76,16 @@ const Posts = (props) => {
             />
           </div>
           <div className="post-personal-info">
-            <a className="font-weight-bold dark-name-color" href="/">
-              {props.post.username}
+            <a className="font-weight-bold dark-name-color mr-3" href="/">
+              {`${props.post.user.name} ${props.post.user.surname}`}
             </a>
-            <span className="text-muted">. 1st</span>
-            <p className="text-muted">Student at Strive School</p>
-            <span className="text-muted">17h .</span>
+            <span className="text-muted">
+              {format(parseISO(props.post.createdAt), `do`)}
+            </span>
+            <p className="text-muted">{props.post.user.title}</p>
+            <span className="text-muted mr-2">
+              {`${format(parseISO(props.post.createdAt), `h`)} h`}
+            </span>
             <BiWorld />
           </div>
           <div>
@@ -107,7 +112,7 @@ const Posts = (props) => {
 
         <p>{props.post.text}</p>
 
-        {props.post.image && <img src={props.post.image} alt="Comments PIC" />}
+        {/* {props.post.image && <img src={props.post.image} alt="Comments PIC" />} */}
         {/* props.post.image && */}
         <div>
           <AiOutlineLike className="mr-2" />
@@ -151,7 +156,7 @@ const Posts = (props) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Posts;
+export default Posts

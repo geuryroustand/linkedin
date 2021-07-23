@@ -59,7 +59,7 @@ const ProfileFace = ({ meProfile, fetchProfile }) => {
       <div
         className="bg-img"
         style={{
-          backgroundImage: `url(${profileBg})`,
+          backgroundImage: `url(https://picsum.photos/1000/500)`,
           height: "12rem",
           objectFit: "cover",
         }}

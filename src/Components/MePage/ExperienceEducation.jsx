@@ -4,6 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi"
 import "../../styles/ExperienceEducation.css"
 import PostExperienceForm from "./PostExperienceForm"
 import { useState, useEffect } from "react"
+import { format, parseISO } from "date-fns"
 
 const ExperienceEducation = ({ meProfile }) => {
   const [addFormShow, setAddFormShow] = useState(false)
@@ -80,7 +81,13 @@ const ExperienceEducation = ({ meProfile }) => {
                       <h5>{experience.company}</h5>
                       <h6>{experience.role}</h6>
                       <p>{experience.description}</p>
-                      <p>{`${experience.startDate} - ${experience.endDate}`}</p>
+                      <p>{`${format(
+                        parseISO(experience.startDate),
+                        `MMM-yyyy`
+                      )} - ${format(
+                        parseISO(experience.endDate),
+                        `MMM-yyyy`
+                      )}`}</p>
                     </a>
                   </div>
                 </div>
