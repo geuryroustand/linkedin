@@ -13,7 +13,7 @@ const PostForm = (props) => {
     text: "",
   })
 
-  console.log(enteredPost)
+  const [postImage, setPostImage] = useState(null)
 
   const handlerPost = (event) => {
     setEnteredPost({ text: event.target.value })
@@ -53,11 +53,29 @@ const PostForm = (props) => {
       // );
 
       if (response.ok) {
-        console.log("post done")
-        setEnteredPost({
-          text: "",
-        })
+        setEnteredPost({ text: "" })
         props.fetchPosts()
+
+        const post = await response.json()
+
+        const formData = new FormData()
+        formData.append("post", postImage)
+
+        try {
+          const response = await fetch(
+            `https://striveschool-api.herokuapp.com/api/posts/${post._id}`,
+            {
+              method: "POST",
+              body: formData,
+              headers: {
+                Authorization:
+                  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY2ODcxYjM0NTViYTAwMTUyMjdkZjciLCJpYXQiOjE2MjY3NjkxODAsImV4cCI6MTYyNzk3ODc4MH0.V4nubxjI1arEROLfw4Xf_rjLxNCsDBT1P3WY5Gnh8zY",
+              },
+            }
+          )
+        } catch (error) {
+          console.log(error)
+        }
       } else {
         console.log("there was an error ")
       }
@@ -155,7 +173,10 @@ const PostForm = (props) => {
               onChange={handlerPost}
             />{" "}
             <br />
-            {/* <input type="file" onChange={handlerPost} name="" id="" /> */}
+            <input
+              type="file"
+              onChange={(e) => setPostImage(e.target.files[0])}
+            />
             {/* <button type="submit"></button> */}
           </form>
         </div>
