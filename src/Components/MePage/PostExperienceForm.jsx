@@ -2,6 +2,8 @@ import { Form, Button } from "react-bootstrap"
 import { useState, useEffect } from "react"
 import { FaTrashAlt } from "react-icons/fa"
 
+
+
 const PostExperienceForm = (props) => {
   const [job, setJob] = useState({
     role: "",
@@ -10,6 +12,7 @@ const PostExperienceForm = (props) => {
     endDate: "",
     description: "",
     area: "",
+    /*isloading:false*/
   })
 
   const [experiencePic, setExperiencePic] = useState(null)
@@ -170,8 +173,8 @@ const PostExperienceForm = (props) => {
       <Form.Group className="mb-3" controlId="startDate">
         <Form.Label>Start Date</Form.Label>
         <Form.Control
-          onChange={(e) => handleInputChange("startDate", e.target.value)}
-          value={job.startDate}
+          onChange={(e) => handleInputChange("startDate", e.target.value)}        
+          value={job.startDate.dateTime}
           type="date"
         />
       </Form.Group>
