@@ -7,15 +7,15 @@ const FooterSmall = () => {
   return (
     <Container className="FOOOOOOOOOTer">
       <div>
-        <div className="LLL d-inline-block  mr-4 ">
+        <div className="LLL d-inline-block  mr-2">
           {" "}
           <Nav.Link id="about"> About </Nav.Link>{" "}
         </div>
-        <div className="LLL d-inline-block mr-4">
+        <div className="LLL d-inline-block mr-2">
           {" "}
           <Nav.Link id="about"> Accessibility </Nav.Link>{" "}
         </div>
-        <div className="LLL d-inline-block mr-4">
+        <div className="LLL d-inline-block mr-2">
           {" "}
           <Nav.Link id="about"> Help Center </Nav.Link>{" "}
         </div>
