@@ -3,8 +3,7 @@ import { useState, useEffect } from "react"
 import { FaTrashAlt } from "react-icons/fa"
 import { AiFillCloseCircle, AiFillCheckCircle } from "react-icons/ai"
 import LoadingSpinner from "../LoadingSpinner"
-
-
+import bearerKey from "../../bearerKey"
 
 const PostExperienceForm = (props) => {
   const [job, setJob] = useState({
@@ -44,8 +43,7 @@ const PostExperienceForm = (props) => {
         `https://striveschool-api.herokuapp.com/api/profile/${props.meProfile._id}/experiences/${props.experienceId}`,
         {
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY2ODcxYjM0NTViYTAwMTUyMjdkZjciLCJpYXQiOjE2MjY3NjkxODAsImV4cCI6MTYyNzk3ODc4MH0.V4nubxjI1arEROLfw4Xf_rjLxNCsDBT1P3WY5Gnh8zY",
+            Authorization: bearerKey,
           },
         }
       )
@@ -74,8 +72,7 @@ const PostExperienceForm = (props) => {
           method: props.experienceId ? "PUT" : "POST",
           body: JSON.stringify(job),
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY2ODcxYjM0NTViYTAwMTUyMjdkZjciLCJpYXQiOjE2MjY3NjkxODAsImV4cCI6MTYyNzk3ODc4MH0.V4nubxjI1arEROLfw4Xf_rjLxNCsDBT1P3WY5Gnh8zY",
+            Authorization: bearerKey,
 
             "Content-Type": "application/json",
           },
@@ -111,8 +108,7 @@ const PostExperienceForm = (props) => {
         {
           method: "DELETE",
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY2ODcxYjM0NTViYTAwMTUyMjdkZjciLCJpYXQiOjE2MjY3NjkxODAsImV4cCI6MTYyNzk3ODc4MH0.V4nubxjI1arEROLfw4Xf_rjLxNCsDBT1P3WY5Gnh8zY",
+            Authorization: bearerKey,
           },
         }
       )
@@ -139,8 +135,7 @@ const PostExperienceForm = (props) => {
           method: "POST",
           body: formData,
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY2ODcxYjM0NTViYTAwMTUyMjdkZjciLCJpYXQiOjE2MjY3NjkxODAsImV4cCI6MTYyNzk3ODc4MH0.V4nubxjI1arEROLfw4Xf_rjLxNCsDBT1P3WY5Gnh8zY",
+            Authorization: bearerKey,
           },
         }
       )
@@ -193,7 +188,7 @@ const PostExperienceForm = (props) => {
       <Form.Group className="mb-3" controlId="startDate">
         <Form.Label>Start Date</Form.Label>
         <Form.Control
-          onChange={(e) => handleInputChange("startDate", e.target.value)}        
+          onChange={(e) => handleInputChange("startDate", e.target.value)}
           value={job.startDate.dateTime}
           type="date"
         />

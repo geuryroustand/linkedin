@@ -7,6 +7,7 @@ import { ImPlay } from "react-icons/im"
 import { Button } from "react-bootstrap"
 // import { TiUser } from "react-icons/ti";
 // import { Modal } from "react-bootstrap";
+import bearerKey from "../../bearerKey"
 
 import { FaIndent } from "react-icons/fa"
 
@@ -35,8 +36,7 @@ const PostForm = (props) => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY2ODcxYjM0NTViYTAwMTUyMjdkZjciLCJpYXQiOjE2MjY3NjkxODAsImV4cCI6MTYyNzk3ODc4MH0.V4nubxjI1arEROLfw4Xf_rjLxNCsDBT1P3WY5Gnh8zY",
+            Authorization: bearerKey,
           },
 
           body: JSON.stringify(enteredPost),
@@ -70,8 +70,7 @@ const PostForm = (props) => {
               method: "POST",
               body: formData,
               headers: {
-                Authorization:
-                  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY2ODcxYjM0NTViYTAwMTUyMjdkZjciLCJpYXQiOjE2MjY3NjkxODAsImV4cCI6MTYyNzk3ODc4MH0.V4nubxjI1arEROLfw4Xf_rjLxNCsDBT1P3WY5Gnh8zY",
+                Authorization: bearerKey,
               },
             }
           )
