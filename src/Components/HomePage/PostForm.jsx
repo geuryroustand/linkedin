@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import "./PostForm.css";
 import profileImg from "./profileImg.jpg";
 import { MdInsertPhoto } from "react-icons/md";
-import { BiCalendar, BiWorld } from "react-icons/bi";
+import { BiCalendar } from "react-icons/bi";
 import { ImPlay } from "react-icons/im";
-import { TiUser } from "react-icons/ti";
-import { Modal, Button } from "react-bootstrap";
-import Navbar from "react-bootstrap/Navbar";
+// import { TiUser } from "react-icons/ti";
+// import { Modal } from "react-bootstrap";
 
 import { FaIndent } from "react-icons/fa";
 
@@ -14,6 +13,8 @@ const PostForm = () => {
   const [enteredPost, setEnteredPost] = useState({
     text: "",
   });
+
+  console.log(enteredPost);
 
   const handlerPost = (event) => {
     setEnteredPost({ text: event.target.value });
@@ -40,6 +41,18 @@ const PostForm = () => {
         }
       );
 
+      // const responsephoto = await fetch(
+      //   `https://striveschool-api.herokuapp.com/api/profile/${props.meProfile._id}/experiences/${experienceId}/picture`,
+      //   {
+      //     method: "POST",
+      //     body: formData,
+      //     headers: {
+      //       Authorization:
+      //         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY2ODcxYjM0NTViYTAwMTUyMjdkZjciLCJpYXQiOjE2MjY3NjkxODAsImV4cCI6MTYyNzk3ODc4MH0.V4nubxjI1arEROLfw4Xf_rjLxNCsDBT1P3WY5Gnh8zY",
+      //     },
+      //   }
+      // );
+
       if (response.ok) {
         console.log("post done");
         setEnteredPost({
@@ -52,63 +65,63 @@ const PostForm = () => {
       console.log(error);
     }
   };
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const [show, setShow] = useState(false);
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
 
-  function Example() {
-    return (
-      <>
-        <form onSubmit={submitPost}>
-          <Modal
-            // style={{ width: "80px" }}
-            show={show}
-            onHide={handleClose}
-            className="border "
-          >
-            <Modal.Header closeButton>
-              <Modal.Title className="text-muted">Create a post</Modal.Title>
-            </Modal.Header>
-            <Modal.Body className="modal-box">
-              <div className="d-flex">
-                <img
-                  style={{ height: "45px", width: "45px" }}
-                  className="post-profile-img mr-2"
-                  src={profileImg}
-                  alt=""
-                />
-                <button className="post-user">
-                  <p>
-                    <TiUser />
-                    Geury Roustand
-                  </p>
-                </button>
-                <button className="post-user">
-                  <p>
-                    <BiWorld />
-                    Anyone
-                  </p>
-                </button>
-              </div>
-              {/* {enteredPost && setShow(false)} */}
-              <input
-                className="post-input"
-                // value={enteredPost.text}
-                placeholder="What do you want to talk about"
-                type="text"
-                name=""
-                id=""
-                onChange={handlerPost}
-              />
-            </Modal.Body>
-            <Modal.Footer>
-              <button type="submit">Post</button>
-            </Modal.Footer>
-          </Modal>
-        </form>
-      </>
-    );
-  }
+  // function Example() {
+  //   return (
+  //     <>
+  //       <form onSubmit={submitPost}>
+  //         <Modal
+  //           // style={{ width: "80px" }}
+  //           show={show}
+  //           onHide={handleClose}
+  //           className="border "
+  //         >
+  //           <Modal.Header closeButton>
+  //             <Modal.Title className="text-muted">Create a post</Modal.Title>
+  //           </Modal.Header>
+  //           <Modal.Body className="modal-box">
+  //             <div className="d-flex">
+  //               <img
+  //                 style={{ height: "45px", width: "45px" }}
+  //                 className="post-profile-img mr-2"
+  //                 src={profileImg}
+  //                 alt=""
+  //               />
+  //               <button className="post-user">
+  //                 <p>
+  //                   <TiUser />
+  //                   Geury Roustand
+  //                 </p>
+  //               </button>
+  //               <button className="post-user">
+  //                 <p>
+  //                   <BiWorld />
+  //                   Anyone
+  //                 </p>
+  //               </button>
+  //             </div>
+  //             {/* {enteredPost && setShow(false)} */}
+  //             <input
+  //               className="post-input"
+  //               // value={enteredPost.text}
+  //               placeholder="What do you want to talk about"
+  //               type="text"
+  //               name=""
+  //               id=""
+  //               onChange={handlerPost}
+  //             />
+  //           </Modal.Body>
+  //           <Modal.Footer>
+  //             <button type="submit">Post</button>
+  //           </Modal.Footer>
+  //         </Modal>
+  //       </form>
+  //     </>
+  //   );
+  // }
 
   return (
     <div className="post-form border">
@@ -137,6 +150,7 @@ const PostForm = () => {
               onChange={handlerPost}
             />{" "}
             <br />
+            {/* <input type="file" onChange={handlerPost} name="" id="" /> */}
             {/* <button type="submit"></button> */}
           </form>
         </div>

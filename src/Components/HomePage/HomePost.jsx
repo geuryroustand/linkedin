@@ -37,8 +37,8 @@ const HomePost = () => {
   return (
     <>
       <PostForm />
-      {getPosts.slice(0, 20).map((post) => {
-        return <Posts post={post} key={post._id} />;
+      {getPosts.slice(0, 30).map((post) => {
+        return <Posts post={post} key={post._id} postId={post._id} />;
       })}
     </>
   );
