@@ -54,7 +54,6 @@ const PostForm = (props) => {
 
       if (response.ok) {
         setEnteredPost({ text: "" })
-        props.fetchPosts()
 
         const post = await response.json()
 
@@ -73,6 +72,12 @@ const PostForm = (props) => {
               },
             }
           )
+
+          if (response.ok) {
+            props.fetchPosts()
+          } else {
+            console.log("error")
+          }
         } catch (error) {
           console.log(error)
         }
