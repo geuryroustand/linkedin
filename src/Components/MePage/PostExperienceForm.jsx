@@ -1,6 +1,8 @@
 import { Form, Button } from "react-bootstrap"
 import { useState, useEffect } from "react"
 import { FaTrashAlt } from "react-icons/fa"
+import { AiFillCloseCircle, AiFillCheckCircle } from "react-icons/ai"
+import LoadingSpinner from "../LoadingSpinner"
 
 
 
@@ -14,6 +16,10 @@ const PostExperienceForm = (props) => {
     area: "",
     /*isloading:false*/
   })
+
+  const [postPictureLoading, setPostPictureLoading] = useState(false)
+  const [postPictureFail, setPostPictureFail] = useState(false)
+  const [postPictureSuccess, setPostPictureSuccess] = useState(false)
 
   const [experiencePic, setExperiencePic] = useState(null)
 
@@ -125,6 +131,7 @@ const PostExperienceForm = (props) => {
   const postCompanyLogo = async (experienceId) => {
     const formData = new FormData()
     formData.append("experience", experiencePic)
+    setPostPictureLoading(true)
     try {
       const response = await fetch(
         `https://striveschool-api.herokuapp.com/api/profile/${props.meProfile._id}/experiences/${experienceId}/picture`,
@@ -139,11 +146,24 @@ const PostExperienceForm = (props) => {
       )
 
       if (response.ok) {
-        console.log("logo posted!")
+        setPostPictureLoading(false)
+        setPostPictureSuccess(true)
+        setTimeout(() => {
+          setPostPictureSuccess(false)
+        }, 5000)
       } else {
-        console.log("there was an error")
+        setPostPictureLoading(false)
+        setPostPictureFail(true)
+        setTimeout(() => {
+          setPostPictureFail(false)
+        }, 5000)
       }
     } catch (error) {
+      setPostPictureLoading(false)
+      setPostPictureFail(true)
+      setTimeout(() => {
+        setPostPictureFail(false)
+      }, 5000)
       console.log(error)
     }
   }
@@ -216,12 +236,26 @@ const PostExperienceForm = (props) => {
             }}
             type="file"
           />
-          <button
-            onClick={() => postCompanyLogo(props.experienceId)}
-            type="button"
-          >
-            Upload
-          </button>
+          <div className="d-flex align-items-center">
+            <button
+              className="mr-3 mt-2"
+              onClick={() => postCompanyLogo(props.experienceId)}
+              type="button"
+            >
+              Upload
+            </button>
+            {postPictureLoading && <LoadingSpinner />}
+            {postPictureSuccess && (
+              <span style={{ color: "green" }}>
+                <AiFillCheckCircle />
+              </span>
+            )}
+            {postPictureFail && (
+              <span style={{ color: "red" }}>
+                <AiFillCloseCircle />
+              </span>
+            )}
+          </div>
         </Form.Group>
       )}
 
