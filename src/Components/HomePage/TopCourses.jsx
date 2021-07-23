@@ -1,13 +1,13 @@
-import { Component } from "react";
-import { BsBoxArrowUpRight } from "react-icons/bs";
-import { HiInformationCircle } from "react-icons/hi";
-import { BiRightArrowAlt } from "react-icons/bi";
-import "../../styles/TopCourses.css";
+import { Component } from "react"
+import { BsBoxArrowUpRight } from "react-icons/bs"
+import { HiInformationCircle } from "react-icons/hi"
+import { BiRightArrowAlt } from "react-icons/bi"
+import "../../styles/TopCourses.css"
 class TopCourses extends Component {
   render() {
     return (
       <div className="top-course">
-        <div className="p-3">
+        <div className="py-3">
           <div className="top-course-info mb-2">
             <p className="top-course-title pl-3">Today’s top courses</p>
             <span className="top-course-infoIcon">
@@ -52,7 +52,7 @@ class TopCourses extends Component {
           </p>
         </div>
       </div>
-    );
+    )
   }
 }
-export default TopCourses;
+export default TopCourses

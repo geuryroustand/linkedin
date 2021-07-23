@@ -3,7 +3,6 @@ import "../../styles/ProfileFace.css"
 import { Form } from "react-bootstrap"
 import striveLogo from "./strive-logo.ico"
 import { BiPencil } from "react-icons/bi"
-import profileBg from "./profileBg.png"
 import StickyProfile from "../StickyProfile"
 
 // console.log(profileImg);
@@ -59,7 +58,7 @@ const ProfileFace = ({ meProfile, fetchProfile }) => {
       <div
         className="bg-img"
         style={{
-          backgroundImage: `url(${profileBg})`,
+          backgroundImage: `url(https://picsum.photos/1000/500)`,
           height: "12rem",
           objectFit: "cover",
         }}

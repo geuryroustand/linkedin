@@ -1,29 +1,28 @@
-import React, { useState } from "react";
-import "./PostForm.css";
-import profileImg from "./profileImg.jpg";
-import { MdInsertPhoto } from "react-icons/md";
-import { BiCalendar } from "react-icons/bi";
-import { ImPlay } from "react-icons/im";
+import React, { useState } from "react"
+import "../../styles/PostForm.css"
+import { MdInsertPhoto } from "react-icons/md"
+import { BiCalendar } from "react-icons/bi"
+import { ImPlay } from "react-icons/im"
 // import { TiUser } from "react-icons/ti";
 // import { Modal } from "react-bootstrap";
 
-import { FaIndent } from "react-icons/fa";
+import { FaIndent } from "react-icons/fa"
 
-const PostForm = () => {
+const PostForm = (props) => {
   const [enteredPost, setEnteredPost] = useState({
     text: "",
-  });
+  })
 
-  console.log(enteredPost);
+  console.log(enteredPost)
 
   const handlerPost = (event) => {
-    setEnteredPost({ text: event.target.value });
-  };
+    setEnteredPost({ text: event.target.value })
+  }
 
   // console.log(enteredPost);
 
   const submitPost = async (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     // const dataPost =
     try {
@@ -39,7 +38,7 @@ const PostForm = () => {
 
           body: JSON.stringify(enteredPost),
         }
-      );
+      )
 
       // const responsephoto = await fetch(
       //   `https://striveschool-api.herokuapp.com/api/profile/${props.meProfile._id}/experiences/${experienceId}/picture`,
@@ -54,17 +53,18 @@ const PostForm = () => {
       // );
 
       if (response.ok) {
-        console.log("post done");
+        console.log("post done")
         setEnteredPost({
           text: "",
-        });
+        })
+        props.fetchPosts()
       } else {
-        console.log("there was an error ");
+        console.log("there was an error ")
       }
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
-  };
+  }
   // const [show, setShow] = useState(false);
   // const handleClose = () => setShow(false);
   // const handleShow = () => setShow(true);
@@ -127,8 +127,13 @@ const PostForm = () => {
     <div className="post-form border">
       <div className="post-center">
         <div className="d-flex">
-          <img className="post-profile-img mr-2" src={profileImg} alt="" />
-
+          {props.meProfile && (
+            <img
+              className="post-profile-img mr-2"
+              src={props.meProfile.image}
+              alt=""
+            />
+          )}
           {/* <input
             className="text-muted"
             type="text"
@@ -179,7 +184,7 @@ const PostForm = () => {
       </div>
       {/* <Example /> */}
     </div>
-  );
-};
+  )
+}
 
-export default PostForm;
+export default PostForm
