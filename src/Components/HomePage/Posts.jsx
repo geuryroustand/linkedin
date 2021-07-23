@@ -60,8 +60,13 @@ const Posts = (props) => {
 
         <p className="p-3">{props.post.text}</p>
 
-        {/* {props.post.image && <img src={props.post.image} alt="Comments PIC" />} */}
-        {/* props.post.image && */}
+        {props.post.image && (
+          <img
+            className="img-fluid"
+            src={props.post.image}
+            alt="Comments PIC"
+          />
+        )}
         <div>
           <AiOutlineLike className="mr-2" />
           <FcLike className="mr-2" />

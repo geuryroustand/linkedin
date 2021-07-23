@@ -4,12 +4,17 @@ import { Form } from "react-bootstrap"
 import striveLogo from "./strive-logo.ico"
 import { BiPencil } from "react-icons/bi"
 import StickyProfile from "../StickyProfile"
+import { AiFillCloseCircle } from "react-icons/ai"
+import LoadingSpinner from "../LoadingSpinner"
 
 // console.log(profileImg);
 const ProfileFace = ({ meProfile, fetchProfile }) => {
   const [picture, setPicture] = useState(null)
   const [showPicForm, setShowPicForm] = useState(false)
   const [exaCoords, setExaCoords] = useState(false)
+  const [postPictureLoading, setPostPictureLoading] = useState(false)
+  const [postPictureFail, setPostPictureFail] = useState(false)
+
   let currentCoords = useRef()
 
   useEffect(() => {
@@ -29,6 +34,8 @@ const ProfileFace = ({ meProfile, fetchProfile }) => {
 
     const formData = new FormData()
     formData.append("profile", picture)
+
+    setPostPictureLoading(true)
     try {
       const response = await fetch(
         `https://striveschool-api.herokuapp.com/api/profile/${meProfile._id}/picture`,
@@ -45,10 +52,20 @@ const ProfileFace = ({ meProfile, fetchProfile }) => {
       if (response.ok) {
         fetchProfile()
         setShowPicForm(!showPicForm)
+        setPostPictureLoading(false)
       } else {
-        console.log("there was an error")
+        setPostPictureLoading(false)
+        setPostPictureFail(true)
+        setTimeout(() => {
+          setPostPictureFail(false)
+        }, 5000)
       }
     } catch (error) {
+      setPostPictureLoading(false)
+      setPostPictureFail(true)
+      setTimeout(() => {
+        setPostPictureFail(false)
+      }, 5000)
       console.log(error)
     }
   }
@@ -99,8 +116,18 @@ const ProfileFace = ({ meProfile, fetchProfile }) => {
                     /* value={picture} */
                     type="file"
                   />
+                  <div className="d-flex align-items-center">
+                    <button className="mt-2 mr-3" type="submit">
+                      Upload
+                    </button>
+                    {postPictureLoading && <LoadingSpinner />}
+                    {postPictureFail && (
+                      <span style={{ color: "red" }}>
+                        <AiFillCloseCircle />
+                      </span>
+                    )}
+                  </div>
                 </Form.Group>
-                <button type="submit">Submit</button>
               </form>
             )}
             <h2>{meProfile && `${meProfile.name} ${meProfile.surname}`}</h2>
