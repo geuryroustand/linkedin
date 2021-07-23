@@ -69,9 +69,9 @@ const PeopleViewedAndKnow = (props) => {
         {props.id === "peopleviewed"
           ? arr.slice(0, 4).map((person, i) => {
               return (
-                <div key={i} className="d-flex justify-content-between">
+                <div key={i} className="d-flex">
                   <img
-                    className="profile-viewed-know"
+                    className="profile-viewed-know mr-2"
                     src="https://1075koolfm.com/wp-content/uploads/2020/02/miniomn.jpg"
                     alt=""
                   />
@@ -92,9 +92,9 @@ const PeopleViewedAndKnow = (props) => {
             })
           : arr.slice(4, 8).map((person, i) => {
               return (
-                <div key={i} className="d-flex justify-content-between">
+                <div key={i} className="d-flex">
                   <img
-                    className="profile-viewed-know"
+                    className="profile-viewed-know mr-2"
                     src="https://1075koolfm.com/wp-content/uploads/2020/02/miniomn.jpg"
                     alt=""
                   />
