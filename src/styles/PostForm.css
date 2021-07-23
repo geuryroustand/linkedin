@@ -15,7 +15,7 @@
   cursor: pointer;
 }
 
-.post-form input {
+.post-form input.post-input {
   height: 50px;
   width: 89%;
   border-radius: 40px;
@@ -24,18 +24,18 @@
   cursor: pointer;
 }
 
-.post-form input::-webkit-input-placeholder {
+.post-form input.post-input::-webkit-input-placeholder {
   font-size: 15px;
   line-height: 3;
   font-weight: 500;
   padding-left: 10px;
 }
 
-.post-form input:hover {
+.post-form input.post-input:hover {
   background-color: rgba(112, 107, 107, 0.1);
 }
 
-.post-form input:focus {
+.post-form input.post-input:focus {
   outline: none;
 }
 
@@ -73,7 +73,6 @@
 .post-input {
   border: none;
   width: 100%;
-  margin-top: 20px;
 }
 
 .post-input:focus {

@@ -168,21 +168,22 @@ const PostForm = (props) => {
           /> */}
 
           <form onSubmit={submitPost} className="w-100">
-            <input
-              className="post-input"
-              value={enteredPost.text}
-              placeholder="What do you want to talk about"
-              type="text"
-              name=""
-              id=""
-              onChange={handlerPost}
-            />{" "}
-            <br />
-            <input
-              type="file"
-              onChange={(e) => setPostImage(e.target.files[0])}
-            />
-            {/* <button type="submit"></button> */}
+            <div className="d-flex align-items-center">
+              <input
+                className="post-input mr-2"
+                value={enteredPost.text}
+                placeholder="What do you want to talk about"
+                type="text"
+                name=""
+                id=""
+                onChange={handlerPost}
+              />
+
+              <input
+                type="file"
+                onChange={(e) => setPostImage(e.target.files[0])}
+              />
+            </div>
           </form>
         </div>
         <div className="d-flex justify-content-between my-2">
