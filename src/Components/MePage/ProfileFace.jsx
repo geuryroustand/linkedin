@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react"
 import "../../styles/ProfileFace.css"
-import { Form } from "react-bootstrap"
+import { Form, Button } from "react-bootstrap"
 import striveLogo from "./strive-logo.ico"
 import { BiPencil } from "react-icons/bi"
 import StickyProfile from "../StickyProfile"
@@ -16,6 +16,7 @@ const ProfileFace = ({ meProfile, fetchProfile }) => {
   const [postPictureFail, setPostPictureFail] = useState(false)
 
   let currentCoords = useRef()
+  const filesInput = useRef()
 
   useEffect(() => {
     const selected = currentCoords.current.getBoundingClientRect()
@@ -110,8 +111,18 @@ const ProfileFace = ({ meProfile, fetchProfile }) => {
             {showPicForm && (
               <form onSubmit={handleSubmitPicture}>
                 <Form.Group controlId="pictureForm">
-                  <Form.Label>Upload Picture</Form.Label>
+                  <Button
+                    variant="outline-primary"
+                    onClick={() => {
+                      filesInput.current.click()
+                    }}
+                  >
+                    Change Profile Picture
+                  </Button>
+
                   <Form.Control
+                    ref={filesInput}
+                    hidden
                     onChange={(e) => setPicture(e.target.files[0])}
                     /* value={picture} */
                     type="file"

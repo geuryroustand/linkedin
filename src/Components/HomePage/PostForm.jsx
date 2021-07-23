@@ -1,8 +1,10 @@
+import { useRef } from "react"
 import React, { useState } from "react"
 import "../../styles/PostForm.css"
 import { MdInsertPhoto } from "react-icons/md"
 import { BiCalendar } from "react-icons/bi"
 import { ImPlay } from "react-icons/im"
+import { Button } from "react-bootstrap"
 // import { TiUser } from "react-icons/ti";
 // import { Modal } from "react-bootstrap";
 
@@ -19,6 +21,7 @@ const PostForm = (props) => {
     setEnteredPost({ text: event.target.value })
   }
 
+  const filesInput = useRef()
   // console.log(enteredPost);
 
   const submitPost = async (event) => {
@@ -178,8 +181,17 @@ const PostForm = (props) => {
                 id=""
                 onChange={handlerPost}
               />
-
+              <Button
+                variant="outline-primary"
+                onClick={() => {
+                  filesInput.current.click()
+                }}
+              >
+                Image
+              </Button>
               <input
+                ref={filesInput}
+                hidden
                 type="file"
                 onChange={(e) => setPostImage(e.target.files[0])}
               />
