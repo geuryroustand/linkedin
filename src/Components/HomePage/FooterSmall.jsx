@@ -1,7 +1,7 @@
 //import { withRouter } from "react-router-dom"
-import "../../styles/FooterSmall.css"
-import { Nav, Row, Container, Dropdown } from "react-bootstrap"
-import React from "react"
+import "../../styles/FooterSmall.css";
+import { Nav, Row, Container, Dropdown } from "react-bootstrap";
+import React from "react";
 
 const FooterSmall = () => {
   return (
@@ -105,12 +105,11 @@ const FooterSmall = () => {
           width="18"
           id="LogoFooter"
           alt="Linkedin logo"
-          id="logoFooter"
         />{" "}
         LinkedIn Corporation © 2021
       </div>
     </Container>
-  )
-}
+  );
+};
 
-export default FooterSmall
+export default FooterSmall;

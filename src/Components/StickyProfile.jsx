@@ -1,22 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import { Container, Row } from "react-bootstrap";
 
 import "../styles/StickyProfile.css";
-const stickyProfile = document.querySelector(".sticky-profile");
 
 const StickyProfile = (props) => {
-  const [coords, setCoords] = useState(0);
-
-  // console.log(props.coords);
-  // window.addEventListener("scroll", () => {
-  //   if (window.scrollY > props.coords.top) {
-  //     console.log("yes");
-  //   }
-  // });
-
-  // console.log(props.coords);
-
   useEffect(() => {
     // window.addEventListener("scroll", () => {
     //   if (window.scrollY > props.coords.top) {
