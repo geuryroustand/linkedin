@@ -8,48 +8,8 @@ import { FaRegCommentDots, FaShare } from "react-icons/fa"
 import { format, parseISO } from "date-fns"
 
 import "../../styles/Posts.css"
-import { useState } from "react"
 
 const Posts = (props) => {
-  const [dot, setDot] = useState()
-  const [postPic, setPostPic] = useState()
-
-  const handlerClick = () => {
-    setDot(!dot)
-  }
-
-  console.log(props.postId._id)
-
-  const postPicData = async (e) => {
-    e.preventDefault()
-
-    const formData = new FormData()
-
-    formData.append("post", postPic)
-
-    try {
-      const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/posts/${props.postId._id}`,
-        {
-          method: "POST",
-          body: formData,
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY2ODcxYjM0NTViYTAwMTUyMjdkZjciLCJpYXQiOjE2MjY3NjkxODAsImV4cCI6MTYyNzk3ODc4MH0.V4nubxjI1arEROLfw4Xf_rjLxNCsDBT1P3WY5Gnh8zY",
-          },
-        }
-      )
-
-      if (response.ok) {
-        console.log("logo posted!")
-      } else {
-        console.log("there was an error")
-      }
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
   return (
     <>
       <div className="d-flex my-2">
@@ -84,10 +44,7 @@ const Posts = (props) => {
                 </span>
               </a>
               <div>
-                <BsThreeDots
-                  onClick={handlerClick}
-                  style={{ fontSize: "1.8rem" }}
-                />
+                <BsThreeDots style={{ fontSize: "1.8rem" }} />
               </div>
             </div>
 

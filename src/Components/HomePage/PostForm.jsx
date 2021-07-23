@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import "../../styles/PostForm.css"
-import profileImg from "./profileImg.jpg"
 import { MdInsertPhoto } from "react-icons/md"
 import { BiCalendar } from "react-icons/bi"
 import { ImPlay } from "react-icons/im"
