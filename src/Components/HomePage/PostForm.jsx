@@ -58,6 +58,7 @@ const PostForm = (props) => {
         setEnteredPost({
           text: "",
         })
+        props.fetchPosts()
       } else {
         console.log("there was an error ")
       }

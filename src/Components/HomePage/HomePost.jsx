@@ -36,10 +36,13 @@ const HomePost = (props) => {
 
   return (
     <>
-      <PostForm meProfile={props.meProfile} />
-      {getPosts.slice(0, 30).map((post) => {
-        return <Posts post={post} key={post._id} postId={post._id} />
-      })}
+      <PostForm meProfile={props.meProfile} fetchPosts={fetchPosts} />
+      {getPosts
+        .reverse()
+        .slice(0, 30)
+        .map((post) => {
+          return <Posts post={post} key={post._id} postId={post._id} />
+        })}
     </>
   )
 }

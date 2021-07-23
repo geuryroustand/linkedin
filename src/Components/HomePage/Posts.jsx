@@ -66,51 +66,42 @@ const Posts = (props) => {
       </div>
 
       <div className="post-main border justify-content-between">
-        <div className="d-flex">
+        <div className="d-flex w-100 align-items-center">
           <div className="mr-2">
             <img
-              style={{ width: "3.5rem", height: "3.5rem" }}
+              style={{ width: "4rem", height: "4rem" }}
               className="post-profile-img"
               src={props.post.user.image}
               alt=""
             />
           </div>
-          <div className="post-personal-info">
-            <a className="font-weight-bold dark-name-color mr-3" href="/">
-              {`${props.post.user.name} ${props.post.user.surname}`}
-            </a>
-            <span className="text-muted">
-              {format(parseISO(props.post.createdAt), `do`)}
-            </span>
+          <div className="post-personal-info w-100">
+            <div className="d-flex justify-content-between w-100 py-n2">
+              <a className="font-weight-bold dark-name-color mr-3" href="/">
+                {`${props.post.user.name} ${props.post.user.surname}`}
+                <span className="pl-2 text-muted">
+                  {format(parseISO(props.post.createdAt), `do`)}
+                </span>
+              </a>
+              <div>
+                <BsThreeDots
+                  onClick={handlerClick}
+                  style={{ fontSize: "1.8rem" }}
+                />
+              </div>
+            </div>
+
             <p className="text-muted">{props.post.user.title}</p>
             <span className="text-muted mr-2">
               {`${format(parseISO(props.post.createdAt), `h`)} h`}
             </span>
             <BiWorld />
           </div>
-          <div>
-            <BsThreeDots
-              onClick={handlerClick}
-              style={{ fontSize: "1.8rem" }}
-            />
 
-            {dot && (
-              <form onSubmit={postPicData}>
-                <input
-                  type="file"
-                  name=""
-                  id=""
-                  onChange={(e) => setPostPic(e.target.files[0])}
-                />{" "}
-                <br />
-                <button type="submit"></button>
-              </form>
-            )}
-          </div>
           <p className="hr"></p>
         </div>
 
-        <p>{props.post.text}</p>
+        <p className="p-3">{props.post.text}</p>
 
         {/* {props.post.image && <img src={props.post.image} alt="Comments PIC" />} */}
         {/* props.post.image && */}
