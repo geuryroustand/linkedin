@@ -1,6 +1,8 @@
 const andrekey =
-  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY2ODcxYjM0NTViYTAwMTUyMjdkZjciLCJpYXQiOjE2MjY3NjkxODAsImV4cCI6MTYyNzk3ODc4MH0.V4nubxjI1arEROLfw4Xf_rjLxNCsDBT1P3WY5Gnh8zY"
+  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY2ODcxYjM0NTViYTAwMTUyMjdkZjciLCJpYXQiOjE2MjY3NjkxODAsImV4cCI6MTYyNzk3ODc4MH0.V4nubxjI1arEROLfw4Xf_rjLxNCsDBT1P3WY5Gnh8zY";
 
-const bearerKey = andrekey
+const geuryKey = `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY1MmMxMDBlZmU3ODAwMTU1YzM0OWIiLCJpYXQiOjE2Mjc2Mjg1ODEsImV4cCI6MTYyODgzODE4MX0.7HLFeRBvTbaIewbiW7JgTkYar6eyUXXIfUlTf6r472k`;
+const bearerKey = andrekey;
 
-export default bearerKey
+// const bearerKey = geuryKey;
+export default bearerKey;

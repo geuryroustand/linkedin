@@ -1,16 +1,17 @@
-import { ImPencil } from "react-icons/im"
-import { FiPlus } from "react-icons/fi"
-import { GiHamburgerMenu } from "react-icons/gi"
-import "../../styles/ExperienceEducation.css"
-import PostExperienceForm from "./PostExperienceForm"
-import { useState, useEffect } from "react"
-import { format, parseISO } from "date-fns"
-import bearerKey from "../../bearerKey"
+import { ImPencil } from "react-icons/im";
+import { FiPlus } from "react-icons/fi";
+import { GiHamburgerMenu } from "react-icons/gi";
+import "../../styles/ExperienceEducation.css";
+import PostExperienceForm from "./PostExperienceForm";
+import { useState, useEffect } from "react";
+import { format, parseISO } from "date-fns";
+import bearerKey from "../../bearerKey";
 
 const ExperienceEducation = ({ meProfile }) => {
-  const [addFormShow, setAddFormShow] = useState(false)
-  const [editFormShow, setEditFormShow] = useState(false)
-  const [experiences, setExperiences] = useState([])
+  const [addFormShow, setAddFormShow] = useState(false);
+  const [editFormShow, setEditFormShow] = useState(false);
+  const [experiences, setExperiences] = useState([]);
+  const [clickFormShow, setClickFormShow] = useState(false);
 
   /* function to fetch get experiences */
   const fetchExperiences = async () => {
@@ -22,30 +23,30 @@ const ExperienceEducation = ({ meProfile }) => {
             Authorization: bearerKey,
           },
         }
-      )
+      );
       if (response.ok) {
-        const myExperiences = await response.json()
-        setExperiences(myExperiences)
-        console.log(myExperiences)
+        const myExperiences = await response.json();
+        setExperiences(myExperiences);
+        console.log(myExperiences);
       } else {
-        console.log("there was an error")
+        console.log("there was an error");
       }
     } catch (error) {
-      console.log("there was an error")
+      console.log("there was an error");
     }
-  }
+  };
 
   /* use effect as component did mount */
   useEffect(() => {
-    fetchExperiences()
+    fetchExperiences();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [meProfile])
+  }, [meProfile]);
 
   /* use effect as component did update */
   useEffect(() => {
-    fetchExperiences()
+    fetchExperiences();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [addFormShow, editFormShow])
+  }, [addFormShow, editFormShow]);
 
   return (
     <div id="experience-education-div" className="border p-4 mb-3">
@@ -93,10 +94,17 @@ const ExperienceEducation = ({ meProfile }) => {
                 </div>
                 <div className="icons text-muted">
                   <div
-                    onClick={() => setEditFormShow(experience._id)}
+                    // onClick={() => setClickFormShow(!clickFormShow)}
+                    onClick={() =>
+                      setClickFormShow(!clickFormShow) ||
+                      setEditFormShow(experience._id)
+                    }
                     className="change-icons text-muted d-flex justify-content-center align-items-center"
                   >
-                    <ImPencil className="Ex-pencil" />
+                    <ImPencil
+                      className="Ex-pencil"
+                      // onClick={() => setClickFormShow(!clickFormShow)}
+                    />
                   </div>
                   <GiHamburgerMenu className="Ex-burger" />
                 </div>
@@ -108,6 +116,7 @@ const ExperienceEducation = ({ meProfile }) => {
                 meProfile={meProfile}
                 setEditFormShow={setEditFormShow}
                 editFormShow={editFormShow}
+                clickFormShow={clickFormShow}
               />
             )}
           </li>
@@ -159,7 +168,7 @@ const ExperienceEducation = ({ meProfile }) => {
         </li>
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default ExperienceEducation
+export default ExperienceEducation;

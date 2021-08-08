@@ -1,13 +1,13 @@
-import React from "react"
-import { BsThreeDots } from "react-icons/bs"
-import { BiWorld } from "react-icons/bi"
-import { AiOutlineLike } from "react-icons/ai"
-import { FcLike } from "react-icons/fc"
-import { RiSendPlaneFill } from "react-icons/ri"
-import { FaRegCommentDots, FaShare } from "react-icons/fa"
-import { format, parseISO } from "date-fns"
+import React from "react";
+import { BsThreeDots } from "react-icons/bs";
+import { BiWorld } from "react-icons/bi";
+import { AiOutlineLike } from "react-icons/ai";
+import { FcLike } from "react-icons/fc";
+import { RiSendPlaneFill } from "react-icons/ri";
+import { FaRegCommentDots, FaShare } from "react-icons/fa";
+import { format, parseISO } from "date-fns";
 
-import "../../styles/Posts.css"
+import "../../styles/Posts.css";
 
 const Posts = (props) => {
   return (
@@ -102,14 +102,14 @@ const Posts = (props) => {
 
           <div className="buttons-comments">
             <button className="mr-2">
-              <RiSendPlaneFill className="mr-2 post-button-icons" />
+              <RiSendPlaneFill className="mr-2 post-button-icons " />
               Send
             </button>
           </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Posts
+export default Posts;

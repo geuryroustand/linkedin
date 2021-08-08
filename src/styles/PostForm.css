@@ -82,3 +82,65 @@
 .modal-box {
   height: 15rem;
 }
+
+.modal-content {
+  border-radius: 12px;
+}
+.button-modal {
+  background-color: transparent;
+  border-radius: 12px;
+  color: #818181;
+  border: solid 1px;
+  height: 30px;
+  margin-top: 5px;
+  /* padding: 9px; */
+  /* margin-left: 50px;  */
+}
+
+.button-modal:hover {
+  background-color: rgba(112, 107, 107, 0.1);
+  /* border: solid 3px; */
+}
+
+.post-button-modal {
+  border: none;
+  background-color: rgba(112, 107, 107, 0.1);
+
+  width: 60px;
+  border-radius: 15px;
+  font-weight: 600;
+  padding: 5px;
+}
+
+.post-button-modal-active {
+  background-color: #0a66c2;
+  color: white;
+  font-weight: 600;
+  width: 60px;
+  border-radius: 15px;
+  padding: 5px;
+  border: none;
+}
+
+/* .post.post-icons-modal {
+} */
+.post-icons-modal:hover {
+  background-color: rgba(112, 107, 107, 0.1);
+  border-radius: 50%;
+}
+
+.input-modal {
+  height: 10rem;
+  width: 100%;
+  border: none;
+  /* margin-top: 40px; */
+}
+
+.input-modal:focus {
+  outline: none;
+}
+::placeholder {
+}
+
+.modal-header {
+}

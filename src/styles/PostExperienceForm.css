@@ -1,0 +1,54 @@
+.primary-color {
+  background-color: #0a66c2 !important;
+  color: white;
+  /* margin-right: 4rem; */
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.primary-color:hover {
+  background-color: #072d53 !important;
+  color: white;
+}
+
+.upload-company-button-logo {
+  background-color: #0a66c2;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  width: 10rem;
+  padding: 10px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.edit-text-modal {
+  background-color: #eef3f8;
+  width: 100% !important;
+  height: 4rem;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.edit-text-modal a {
+  color: #0a66c2;
+  font-weight: 600;
+}
+
+.delete-button {
+  background-color: transparent;
+  margin-right: 40rem;
+  color: #666666;
+  border-radius: 12px;
+  border: 1px solid #666666;
+  font-weight: 600;
+}
+
+.delete-button:hover {
+  background-color: #474545;
+  border: 1px solid #666666;
+}

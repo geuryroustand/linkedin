@@ -1,32 +1,41 @@
-import { useRef } from "react"
-import React, { useState } from "react"
-import "../../styles/PostForm.css"
-import { MdInsertPhoto } from "react-icons/md"
-import { BiCalendar } from "react-icons/bi"
-import { ImPlay } from "react-icons/im"
-import { Button } from "react-bootstrap"
-// import { TiUser } from "react-icons/ti";
-// import { Modal } from "react-bootstrap";
-import bearerKey from "../../bearerKey"
+import { useRef } from "react";
+import React, { useState } from "react";
+import "../../styles/PostForm.css";
+import { MdInsertPhoto } from "react-icons/md";
+import { BiCalendar } from "react-icons/bi";
+import { ImPlay } from "react-icons/im";
+import { Button } from "react-bootstrap";
+import { TiUser } from "react-icons/ti";
+import { BiWorld } from "react-icons/bi";
+import { FaPoll, FaRegCommentDots } from "react-icons/fa";
+import { BsThreeDots } from "react-icons/bs";
 
-import { FaIndent } from "react-icons/fa"
+import { HiDocumentText } from "react-icons/hi";
+import { Modal, NavDropdown } from "react-bootstrap";
+
+import bearerKey from "../../bearerKey";
+
+import { FaIndent } from "react-icons/fa";
 
 const PostForm = (props) => {
   const [enteredPost, setEnteredPost] = useState({
     text: "",
-  })
+  });
 
-  const [postImage, setPostImage] = useState(null)
+  const [postImage, setPostImage] = useState(null);
 
   const handlerPost = (event) => {
-    setEnteredPost({ text: event.target.value })
-  }
+    setEnteredPost({ text: event.target.value });
 
-  const filesInput = useRef()
+    // console.log(event.target.value);
+  };
+
+  console.log(enteredPost.text.length > 0);
+  const filesInput = useRef();
   // console.log(enteredPost);
 
   const submitPost = async (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
     // const dataPost =
     try {
@@ -41,27 +50,16 @@ const PostForm = (props) => {
 
           body: JSON.stringify(enteredPost),
         }
-      )
-
-      // const responsephoto = await fetch(
-      //   `https://striveschool-api.herokuapp.com/api/profile/${props.meProfile._id}/experiences/${experienceId}/picture`,
-      //   {
-      //     method: "POST",
-      //     body: formData,
-      //     headers: {
-      //       Authorization:
-      //         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGY2ODcxYjM0NTViYTAwMTUyMjdkZjciLCJpYXQiOjE2MjY3NjkxODAsImV4cCI6MTYyNzk3ODc4MH0.V4nubxjI1arEROLfw4Xf_rjLxNCsDBT1P3WY5Gnh8zY",
-      //     },
-      //   }
-      // );
+      );
 
       if (response.ok) {
-        setEnteredPost({ text: "" })
+        setEnteredPost({ text: "" });
 
-        const post = await response.json()
+        const post = await response.json();
 
-        const formData = new FormData()
-        formData.append("post", postImage)
+        const formData = new FormData();
+
+        formData.append("post", postImage);
 
         try {
           const response = await fetch(
@@ -73,80 +71,27 @@ const PostForm = (props) => {
                 Authorization: bearerKey,
               },
             }
-          )
+          );
 
           if (response.ok) {
-            props.fetchPosts()
+            props.fetchPosts();
           } else {
-            console.log("error")
+            console.log("error");
           }
         } catch (error) {
-          console.log(error)
+          console.log(error);
         }
       } else {
-        console.log("there was an error ")
+        console.log("there was an error ");
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
-  // const [show, setShow] = useState(false);
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
+  };
 
-  // function Example() {
-  //   return (
-  //     <>
-  //       <form onSubmit={submitPost}>
-  //         <Modal
-  //           // style={{ width: "80px" }}
-  //           show={show}
-  //           onHide={handleClose}
-  //           className="border "
-  //         >
-  //           <Modal.Header closeButton>
-  //             <Modal.Title className="text-muted">Create a post</Modal.Title>
-  //           </Modal.Header>
-  //           <Modal.Body className="modal-box">
-  //             <div className="d-flex">
-  //               <img
-  //                 style={{ height: "45px", width: "45px" }}
-  //                 className="post-profile-img mr-2"
-  //                 src={profileImg}
-  //                 alt=""
-  //               />
-  //               <button className="post-user">
-  //                 <p>
-  //                   <TiUser />
-  //                   Geury Roustand
-  //                 </p>
-  //               </button>
-  //               <button className="post-user">
-  //                 <p>
-  //                   <BiWorld />
-  //                   Anyone
-  //                 </p>
-  //               </button>
-  //             </div>
-  //             {/* {enteredPost && setShow(false)} */}
-  //             <input
-  //               className="post-input"
-  //               // value={enteredPost.text}
-  //               placeholder="What do you want to talk about"
-  //               type="text"
-  //               name=""
-  //               id=""
-  //               onChange={handlerPost}
-  //             />
-  //           </Modal.Body>
-  //           <Modal.Footer>
-  //             <button type="submit">Post</button>
-  //           </Modal.Footer>
-  //         </Modal>
-  //       </form>
-  //     </>
-  //   );
-  // }
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <div className="post-form border">
@@ -159,6 +104,148 @@ const PostForm = (props) => {
               alt=""
             />
           )}
+
+          <input
+            className="post-input mr-2"
+            // value={enteredPost.text}
+            placeholder=" Start a post"
+            type="text"
+            name=""
+            id=""
+            // onChange={handlerPost}
+            onClick={handleShow}
+          />
+
+          <Modal show={show} className="modal-header " onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title style={{ fontSize: "22px", fontWeight: "normal" }}>
+                Create a post
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <div className="d-flex ">
+                {props.meProfile && (
+                  <img
+                    className="post-profile-img mr-2"
+                    src={props.meProfile.image}
+                    alt=""
+                  />
+                )}
+                {props.meProfile && (
+                  <button className="mr-1 button-modal">
+                    <TiUser />
+
+                    {` ${props.meProfile.name} ${props.meProfile.surname} `}
+                  </button>
+                )}
+                <button className="d-flex justify-content-between button-modal  ">
+                  <BiWorld />
+                  <NavDropdown title=" Anyone" id="nav-dropdown">
+                    <NavDropdown.Item eventKey="4.1">Action</NavDropdown.Item>
+                    <NavDropdown.Item eventKey="4.2">
+                      Another action
+                    </NavDropdown.Item>
+                    <NavDropdown.Item eventKey="4.3">
+                      Something else here
+                    </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item eventKey="4.4">
+                      Separated link
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                </button>
+              </div>
+
+              <form onSubmit={submitPost}>
+                <input
+                  type="text"
+                  placeholder="What do you want to talk about?"
+                  value={enteredPost.text}
+                  onChange={handlerPost}
+                  className="input-modal mb-5"
+                />
+
+                {/* post-icons */}
+
+                <div className=" d-flex justify-content-between align-items-center ">
+                  <div className="post-icons-modal post-icons mt-1">
+                    <input
+                      id="img"
+                      ref={filesInput}
+                      hidden
+                      type="file"
+                      onChange={(e) => setPostImage(e.target.files[0])}
+                    />
+
+                    <label for="img">
+                      <MdInsertPhoto
+                        style={{ fontSize: "1.4rem", color: "#666666" }}
+                      />
+                    </label>
+                  </div>
+                  {/* post-icons post-icons-modal */}
+                  <div className="post-icons-modal post-icons ">
+                    <span>
+                      <ImPlay
+                        style={{ fontSize: "1.4rem", color: " #666666" }}
+                      />
+                    </span>
+                  </div>
+
+                  <div className=" post-icons-modal post-icons ">
+                    <span>
+                      <HiDocumentText
+                        style={{ fontSize: "1.4rem", color: " #666666" }}
+                      />
+                    </span>
+                  </div>
+
+                  <div className="post-icons-modal post-icons ">
+                    <span>
+                      <FaPoll
+                        style={{ fontSize: "1.4rem", color: " #666666" }}
+                      />
+                    </span>
+                  </div>
+                  <div className="post-icons-modal post-icons">
+                    <span>
+                      <BsThreeDots
+                        style={{ fontSize: "1.4rem", color: " #666666" }}
+                      />
+                    </span>
+                  </div>
+
+                  <div className="">
+                    <span>
+                      <FaRegCommentDots
+                        style={{ fontSize: "1.4rem", color: " #666666" }}
+                      />
+                    </span>
+                    <span>Anyone</span>
+                  </div>
+
+                  <div>
+                    <button
+                      type="submit"
+                      className={
+                        enteredPost.text.length > 0
+                          ? "post-button-modal-active "
+                          : "post-button-modal text-muted "
+                      }
+                    >
+                      Post
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </Modal.Body>
+            {/* <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>
+                Close
+              </Button>
+            </Modal.Footer> */}
+          </Modal>
+
           {/* <input
             className="text-muted"
             type="text"
@@ -169,7 +256,7 @@ const PostForm = (props) => {
             onClick={handleShow}
           /> */}
 
-          <form onSubmit={submitPost} className="w-100">
+          {/* <form onSubmit={submitPost} className="w-100">
             <div className="d-flex align-items-center">
               <input
                 className="post-input mr-2"
@@ -183,7 +270,7 @@ const PostForm = (props) => {
               <Button
                 variant="outline-primary"
                 onClick={() => {
-                  filesInput.current.click()
+                  filesInput.current.click();
                 }}
               >
                 Image
@@ -195,7 +282,7 @@ const PostForm = (props) => {
                 onChange={(e) => setPostImage(e.target.files[0])}
               />
             </div>
-          </form>
+          </form> */}
         </div>
         <div className="d-flex justify-content-between my-2">
           <div className="post-icons">
@@ -220,9 +307,8 @@ const PostForm = (props) => {
           </div>
         </div>
       </div>
-      {/* <Example /> */}
     </div>
-  )
-}
+  );
+};
 
-export default PostForm
+export default PostForm;
